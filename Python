@@ -4,6 +4,11 @@ df.info()
 #list comprehension
 df['nome da coluna'] = [condição for i in df.nomedoluna]
 
+#Extração da chave data
+#Exclusão dos valores apos espaço
+#split onde quero separar
+df_event_selecao['createTimestamp'] = [data['date'].split(' ')[0] for data in df_event_selecao.createTimestamp]
+
 #analisando valores das colunas para seleção
 df.columns.values
 
