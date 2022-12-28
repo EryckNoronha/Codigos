@@ -17,3 +17,6 @@ df_space_selecao.isnull().sum()
 #localizando museu com endereco null
 index = np.where(df.nome_coluna.isnull())
 df.loc[index]
+
+#trocar null por str
+df.nomecoluna.replace(np.nan, 'nova str')
