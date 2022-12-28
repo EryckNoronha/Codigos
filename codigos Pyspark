@@ -3,7 +3,13 @@ df1 = spark.read.csv('/content/df_space.csv', sep=';', header=True)
 
 #print
 df1.printSchema()
+df1.show(n=5, truncate= False)
 
+transformar em df pandas
+dfPandas = df1.toPandas()
+
+#selecionar item na coluna
+df1.select("name").filter(F.col('id')==6077).collect()
 
 #criando arquivo
 df = spark\ 
