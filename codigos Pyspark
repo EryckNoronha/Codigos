@@ -1,6 +1,15 @@
+#ler df com spark
+df1 = spark.read.csv('/content/df_space.csv', sep=';', header=True)
+
+#print
+df1.printSchema()
+
+
 #criando arquivo
 df = spark\ 
 .read.format("csv")\
 .opition("interSachema", "True")\
 .opitions("header","True")\
 .csv(arquivo)
+
+
