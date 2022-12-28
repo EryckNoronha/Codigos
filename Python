@@ -1,8 +1,24 @@
 #tras as informações do df, nome,numero de lunos e typo
 df.info()
 
+#dados estatisticos
+base_credit.describe()
+
+#seleciona os unicos
+df.column_name.unique() 
+
 #list comprehension
 df['nome da coluna'] = [condição for i in df.nomedoluna]
+
+#mudar o tipo
+df['Temperature'] = df['Temperature'].astype(int)
+
+
+#conversão datas
+df['Date'] = pd.to_datetime(df['Date'])
+df['Month'] = df['Date'].dt.month
+df['Year'] = df['Date'].dt.year
+df['YearMonth'] = df['Date'].dt.strftime('%Y-%m')
 
 #Extração da chave data
 #Exclusão dos valores apos espaço
@@ -22,6 +38,10 @@ df_space_selecao.isnull().sum()
 #localizando museu com endereco null
 index = np.where(df.nome_coluna.isnull())
 df.loc[index]
+
+#localisar valor
+df[df['nome coluna'] >= valor]
+
 
 #trocar null por str
 df.nomecoluna.replace(np.nan, 'nova str')
