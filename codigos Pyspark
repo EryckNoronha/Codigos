@@ -1,9 +1,9 @@
+https://github.com/stacktecnologias/stack-repo/blob/master/PySpark_Aula_01.ipynb
+
+https://www.youtube.com/watch?v=EMACjF6eCU4&t=45s
+
 #ler df com spark
 df1 = spark.read.csv('/content/df_space.csv', sep=';', header=True)
-
-#print
-df1.printSchema()
-df1.show(n=5, truncate= False)
 
 transformar em df pandas
 dfPandas = df1.toPandas()
@@ -11,11 +11,86 @@ dfPandas = df1.toPandas()
 #selecionar item na coluna
 df1.select("name").filter(F.col('id')==6077).collect()
 
+#visualisar datasets disponiveis em diretório
+display(dbutils.fs.ls("caminho"))
+
+#ler o arquivo
+arquivo  = "caminho" -> transformou em uma str
+
 #criando arquivo
 df = spark\ 
 .read.format("csv")\
-.opition("interSachema", "True")\
-.opitions("header","True")\
-.csv(arquivo)
+.opition("interSachema", "True")\ #interSachema escolhe altomatico os tipos dos dados para trabalhar
+.opitions("header","True")\ #tem cabeçalho
+.csv(arquivo) #localisação dos arquivos
+
+#print
+df1.printSchema()
+df1.show(n=5, truncate= False)
+
+#tipo
+type('nome df')
+
+#ver as 5 primeiras linhas no formato array
+df.take(numero de linhas)
+
+#quantidade de linhas
+df.count()
+
+CONSULTANDO DADOS
+#
+from pyspark.sql.functions import max
+df.select(max("nome coluna")).take(1) -> retorna o maior valor da coluna
+
+
+#filtrar linha
+df.filter(""nome coluna < valor").show(quantidade de linhas que querto) 
+
+df.where(""nome coluna < valor").show(quantidade de linhas que querto) 
+
+#ordernar pela coluna
+df.sort("nome coluna").show(quantidade de linhas que querto) 
+
+from pyspark.sql.functions import desc, asc, expr
+
+# ordernar por ordem crescente
+df.orderBy(expr("nome coluna desc")).show(quantidade de linhas que querto)
+
+#estatisticas descritivas
+df.describe().show()
+
+#fazendo for interando linhas com collect()
+for i in df.collect():
+     i -> retorna toda a linha
+     i[index] -> retorna o conteudo
+     
+#adicionar nova coluna
+df = df.withColumn('Nova coluna',dados a receber)
+
+#remover coluna
+df = df.drop('nome da coluna')
+
+#renomear coluna
+df.withColumnRenamed('Nome de Coluna','Novo nome').show()
+
+#filtrar valores nulos
+df.filter("nome da coluna NULL").show()
+
+#filtrar valores missing
+df.filter(df.nomecoluna.isNull()).show()
+
+#substituir os valos NAN por 
+df.na.fill(value=valor).show()
+
+#subtituir os valores nan na coluna especifica
+df.na.fill(value=valor, subset=['nome coluna']).show()
+
+#remover linhas com valores vazio na
+df.na.drop().show()
+
+
+
+
+
 
 
