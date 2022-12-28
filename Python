@@ -25,3 +25,6 @@ df.loc[index]
 
 #trocar null por str
 df.nomecoluna.replace(np.nan, 'nova str')
+
+# Descarta coluna 
+df.drop(["nome coluna1", "nome coluna2"], axis=1, inplace=True)
