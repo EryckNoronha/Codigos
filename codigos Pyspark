@@ -1,0 +1,6 @@
+#criando arquivo
+df = spark\ 
+.read.format("csv")\
+.opition("interSachema", "True")\
+.opitions("header","True")\
+.csv(arquivo)
