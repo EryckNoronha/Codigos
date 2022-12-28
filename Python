@@ -13,3 +13,7 @@ df_selecao = df_event.filter(items=selecionadas)
 
 #verificando valores nulos
 df_space_selecao.isnull().sum()
+
+#localizando museu com endereco null
+index = np.where(df.nome_coluna.isnull())
+df.loc[index]
