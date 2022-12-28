@@ -1,0 +1,2 @@
+#tras as informações do df, nome,numero de lunos e typo
+df.info()
