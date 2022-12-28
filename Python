@@ -1,2 +1,15 @@
 #tras as informações do df, nome,numero de lunos e typo
 df.info()
+
+#list comprehension
+df['nome da coluna'] = [condição for i in df.nomedoluna]
+
+#analisando valores das colunas para seleção
+df.columns.values
+
+#Seleção das colunas
+selecionadas=['nome da coluna1', 'nome da coluna2']
+df_selecao = df_event.filter(items=selecionadas)
+
+#verificando valores nulos
+df_space_selecao.isnull().sum()
