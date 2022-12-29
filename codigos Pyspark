@@ -60,6 +60,9 @@ df.withColumn("nome_coluna", flights.air_time/60).groupBy().sum("nome_coluna2").
 --------------------
 Visualizar
 -------------------
+#agrupando e vendo media
+das pessoas media = df.select(F.mean('idade')).collect()[0][0] --> [0] linha1, [0]--> coluna 1
+df.groupBy().mean('idade').show()
 
 #visualizar datasets disponiveis em diretório
 display(dbutils.fs.ls("caminho"))
