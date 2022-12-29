@@ -1,4 +1,6 @@
 https://github.com/stacktecnologias/stack-repo/blob/master/PySpark_Aula_01.ipynb
+https://github.com/Pedrocanizel/Pedrocanizel/blob/main/pyspark_aula_03.ipynb
+https://github.com/Pedrocanizel/Pedrocanizel
 
 https://www.youtube.com/watch?v=EMACjF6eCU4&t=45s
 
@@ -28,13 +30,15 @@ selected2 = selected2.filter(filterA).filter(filterB)
 df1.select("name").filter(F.col('id')==6077).collect()
 
 
-https://github.com/Pedrocanizel/Pedrocanizel/blob/main/pyspark_aula_03.ipynb
-
 #vendo condição when = quando , otherwise=caso contrario
 df2 = (df1.withColumn('nome_coluna_criar', F.when(F.col('nome coluna')>0, 'Tem casos novos') .otherwise('Nao tem casos novos'))) 
 
 #concatenando valor e escrevendo juntos na coluna
 f3 = (df1.withColumn("nome coluna1", F.when(F.col("nome coluna2") > 0, F.concat(df1.nome coluna2,F.lit(" casos novos"))) .otherwise("Não tem casos novos")))
+
+#criar coluna pegando pedações da string
+#substring('nome coluna', posição index str(começa por 1), quantidade que vai pegar))
+df4 = df1.withColumn('ano', F.substring('data', 1, 4)).withColumn('mes', F.substring('data', 6, 2)).withColumn('dia', F.substring('data', 9, 2))
 
 ------------------------
 Agregar
@@ -69,6 +73,13 @@ df = spark\
 .opition("interSachema", "True")\ #interSachema escolhe altomatico os tipos dos dados para trabalhar
 .opitions("header","True")\ #tem cabeçalho
 .csv(arquivo) #localisação dos arquivos
+
+#alterar tipo coluna com cast
+df5 = (
+    df1.withColumn('ano', F.substring('data', 1, 4).cast('integer'))
+    .withColumn('mes', F.substring('data', 6, 2).cast('integer'))
+    .withColumn('dia', F.substring('data', 9, 2).cast('integer'))
+    )
 
 #print
 df1.printSchema()
