@@ -8,10 +8,47 @@ df1 = spark.read.csv('/content/df_space.csv', sep=';', header=True)
 transformar em df pandas
 dfPandas = df1.toPandas()
 
+----------------------------------
+Select
+--------------------------------
+#filtrando por condição coluna
+df.filter("nome_coluna > 120").show()
+
+
+# Definindo o primeiro filtro
+filterA = df.origin == "SEA"
+
+# Definindo o segundo filtro
+filterB = df.dest == "PDX"
+
+# Filtrando os dados, primeiro pelo filterA entao pelo filterB
+selected2 = selected2.filter(filterA).filter(filterB)
+
 #selecionar item na coluna
 df1.select("name").filter(F.col('id')==6077).collect()
 
-#visualisar datasets disponiveis em diretório
+------------------------
+Agregar
+------------------------------
+# Achar a maior tempo de voo de SEA para outras cidades
+df.filter(df.nome_coluna== "o que busca").groupBy().max("nome_coluna2").show()
+
+
+# Achar a menor distancia do voo de PDX para outras cidades
+ds.filter(df.origin == "PDX").groupBy().min("nome_coluna2").show()
+
+
+# Duração Média dos Voos da compania delta
+df.filter(flights.carrier == "DL").filter(flights.origin == "SEA").groupBy().avg("air_time").show()
+
+# Tempo total em Horas no ar 
+df.withColumn("duration_hrs", flights.air_time/60).groupBy().sum("duration_hrs").show()
+
+--------------------
+Visualizar
+-------------------
+
+#visualizar datasets disponiveis em diretório
 display(dbutils.fs.ls("caminho"))
 
 #ler o arquivo
