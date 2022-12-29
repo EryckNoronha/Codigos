@@ -27,6 +27,15 @@ selected2 = selected2.filter(filterA).filter(filterB)
 #selecionar item na coluna
 df1.select("name").filter(F.col('id')==6077).collect()
 
+
+https://github.com/Pedrocanizel/Pedrocanizel/blob/main/pyspark_aula_03.ipynb
+
+#vendo condição when = quando , otherwise=caso contrario
+df2 = (df1.withColumn('nome_coluna_criar', F.when(F.col('nome coluna')>0, 'Tem casos novos') .otherwise('Nao tem casos novos'))) 
+
+#concatenando valor e escrevendo juntos na coluna
+f3 = (df1.withColumn("nome coluna1", F.when(F.col("nome coluna2") > 0, F.concat(df1.nome coluna2,F.lit(" casos novos"))) .otherwise("Não tem casos novos")))
+
 ------------------------
 Agregar
 ------------------------------
@@ -39,10 +48,10 @@ ds.filter(df.origin == "PDX").groupBy().min("nome_coluna2").show()
 
 
 # Duração Média dos Voos da compania delta
-df.filter(flights.carrier == "DL").filter(flights.origin == "SEA").groupBy().avg("air_time").show()
+df.filter(df.nome_coluna == "DL").filter(flights.origin == "SEA").groupBy().avg("nome_coluna2").show()
 
 # Tempo total em Horas no ar 
-df.withColumn("duration_hrs", flights.air_time/60).groupBy().sum("duration_hrs").show()
+df.withColumn("nome_coluna", flights.air_time/60).groupBy().sum("nome_coluna2").show()
 
 --------------------
 Visualizar
@@ -189,6 +198,13 @@ df = flights.toPandas()
 
 # df pandas para spark
 spark_temp = spark.createDataFrame(df)
+
+------------------
+Join
+-----------------
+
+# Join os DataFrames
+flights_with_airports = df1.join(df2, on="dest", how="leftouter") --> on: é o que os dfs tem de semelhante, how: tipo do join
 
 
 
