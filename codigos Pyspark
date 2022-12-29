@@ -67,6 +67,10 @@ df.groupBy().mean('idade').show()
 #visualizar datasets disponiveis em diretório
 display(dbutils.fs.ls("caminho"))
 
+#filtrar colunas reduzidas e condição
+df2.select(df2['nome'],df2['idade']).filter("idade>40").show()
+
+
 #ler o arquivo
 arquivo  = "caminho" -> transformou em uma str
 
@@ -87,6 +91,14 @@ df2= (df.withColumn("id", df["id"].cast('int'))
          .withColumn("idade", df["idade"].cast('int'))
          .withColumn("gen", df["gen"].cast('string'))
 )
+
+#mudando data
+event = event.withColumn("spaceId", event["spaceId"].cast('int'))\
+             .withColumn("createTimestamp",to_date("createTimestamp","yyyy-MM-dd"))\
+             .withColumn("dataInicio",to_date("dataInicio","yyyy-MM-dd"))\
+             .withColumn("dataFinal",to_date("dataFinal","yyyy-MM-dd"))\
+
+event.printSchema()
 
 #alterar tipo coluna com cast
 df5 = (
@@ -170,6 +182,11 @@ selected2.show(5)
 
 
 ---------------------------------------------------------
+fultro, valores vazios
+
+https://sparkbyexamples.com/pyspark/pyspark-fillna-fill-replace-null-values/
+------------------------------------------------------
+
 #filtrar valores nulos
 df.filter("nome da coluna NULL").show()
 
