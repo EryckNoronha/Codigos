@@ -63,18 +63,46 @@ df.describe().show()
 for i in df.collect():
      i -> retorna toda a linha
      i[index] -> retorna o conteudo
-     
+
+-------------------------------
+Colunas
+-------------------------
+
 #adicionar nova coluna
 df = df.withColumn('Nova coluna',dados a receber)
+
+#criando nova coluna
+df2 = df.withColumn("duration_hrs", df.nome_coluna/60)
+
+#renomeou
+df.select((df.nome_coluna/60).alias("novo_nome")).show()
+
+
+# Selecionando um subconjunto do dataset
+selected1 = flights.select("tailnum", "origin", "dest")
+selected1.show(5)
 
 #remover coluna
 df = df.drop('nome da coluna')
 
+#Retirando as datas e passando colunas para tipos corretos.
+flights = flights.\
+        withColumn("new_air_time", col("air_time").cast("integer")).drop("air_time")
+
 #renomear coluna
 df.withColumnRenamed('Nome de Coluna','Novo nome').show()
 
+#llistando colunas desejadas
+lista = ["tailnum", "origin", "dest"]
+selected2 = df.select(lista)
+selected2.show(5)
+
+
+---------------------------------------------------------
 #filtrar valores nulos
 df.filter("nome da coluna NULL").show()
+
+
 
 #filtrar valores missing
 df.filter(df.nomecoluna.isNull()).show()
@@ -88,6 +116,42 @@ df.na.fill(value=valor, subset=['nome coluna']).show()
 #remover linhas com valores vazio na
 df.na.drop().show()
 
+#salvar como tabela
+df.write.mode('overwrite') \
+    .saveAsTable("df5")
+---------------------------------------------------------
+Temporay e  global Viw
+-------------------------------------------------
+#Registrando o dataframe em uma view temporária
+df.createOrReplaceTempView("nome_df")
+
+query = "FROM nome_df SELECT * LIMIT 10"
+
+# Selecionando as 10 primeiras linhas do dataset
+variavel = spark.sql(query)
+
+
+# Registtrando o dataframe como view global
+flights.createGlobalTempView("flights")
+
+# A visão temporária global está vinculada a um banco de dados preservado pelo sistema `global_temp`
+spark.sql("SELECT * FROM global_temp.flights LIMIT 10").show()
+_______________________________
+
+--------------------
+Passando para pandas
+--------------------
+query = "SELECT origin, dest, COUNT(*) as N FROM flights GROUP BY origin, dest"
+
+# Rodando a query
+flight_counts = spark.sql(query)
+import pandas as pd     
+
+# Convertendo o resultado para pandas
+df = flights.toPandas()
+
+# df pandas para spark
+spark_temp = spark.createDataFrame(df)
 
 
 
