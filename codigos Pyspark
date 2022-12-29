@@ -16,6 +16,8 @@ Select
 #filtrando por condição coluna
 df.filter("nome_coluna > 120").show()
 
+#localisar
+df2 = df.filter(F.col("nome_coluna").contains(o que estou procurando))
 
 # Definindo o primeiro filtro
 filterA = df.origin == "SEA"
@@ -39,6 +41,26 @@ f3 = (df1.withColumn("nome coluna1", F.when(F.col("nome coluna2") > 0, F.concat(
 #criar coluna pegando pedações da string
 #substring('nome coluna', posição index str(começa por 1), quantidade que vai pegar))
 df4 = df1.withColumn('ano', F.substring('data', 1, 4)).withColumn('mes', F.substring('data', 6, 2)).withColumn('dia', F.substring('data', 9, 2))
+
+--------------------------------------------------------
+#mudar para maiusculo com initcamp
+joined1 = joined1.withColumn('frequencia_evento', F.initcap(col('frequencia_evento')))
+
+------------------------------------------------------
+
+_________________________________________________________________
+#mudar virgula por ponto
+
+from pyspark.sql.functions import regexp_replace as RR
+
+def mudar_virgula_para_ponto(coluna):
+
+    global df1
+
+    df1 = df1.withColumn(f"{coluna}", RR(f"{coluna}",",","."))
+
+mudar_virgula_para_ponto("Unit Price")
+___________________________________________________________________
 
 ------------------------
 Agregar
