@@ -77,6 +77,17 @@ df = spark\
 .opitions("header","True")\ #tem cabeçalho
 .csv(arquivo) #localisação dos arquivos
 
+
+tipos dados pyspark
+https://learn.microsoft.com/pt-br/azure/databricks/sql/language-manual/sql-ref-datatypes
+
+#alterado tipos colunas
+df2= (df.withColumn("id", df["id"].cast('int'))
+         .withColumn("nome", df["nome"].cast('string'))
+         .withColumn("idade", df["idade"].cast('int'))
+         .withColumn("gen", df["gen"].cast('string'))
+)
+
 #alterar tipo coluna com cast
 df5 = (
     df1.withColumn('ano', F.substring('data', 1, 4).cast('integer'))
