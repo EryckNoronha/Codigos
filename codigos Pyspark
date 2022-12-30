@@ -176,7 +176,11 @@ from pyspark.sql.functions import max
 df.select(max("nome coluna")).take(1) -> retorna o maior valor da coluna
 
 
-#filtrar linha
+#filtro linha spark
+ df.filter(df.payer_code == "?").count()
+
+
+#filtrar linha sql
 df.filter(""nome coluna < valor").show(quantidade de linhas que querto) 
 
 df.where(""nome coluna < valor").show(quantidade de linhas que querto) 
