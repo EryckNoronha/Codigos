@@ -165,8 +165,10 @@ type('nome df')
 #ver as 5 primeiras linhas no formato array
 df.take(numero de linhas)
 
-#quantidade de linhas
-df.count()
+#quantidade de linhas e colunas
+col = len(df.columns)
+lin = df.count()
+print(f'quantidade de colunas {col}, quantidade linhas {lin}')
 
 CONSULTANDO DADOS
 #
