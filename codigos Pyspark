@@ -4,11 +4,37 @@ https://github.com/Pedrocanizel/Pedrocanizel
 
 https://www.youtube.com/watch?v=EMACjF6eCU4&t=45s
 
+
+
+---------------------------------------
+Montar schema
+---------------------------------------
+schema = StructType([StructField(nome="nome coluna1", dataType=StringType(), True), 
+                    StructField(nome="nome coluna2", dataType=IntergerType(), True), 
+                    StructField(nome="nome coluna3", dataType=IntegerType(), True) , 
+                    StructField(nome="nome coluna1", dataType=StringType(), True)
+                    ])
+
+#lendo com schema
+df = spark.createDataFrame("dados", schema)
+
+------------------------------------------
+Ler arquivos
+------------------------------------
 #ler df com spark
 df1 = spark.read.csv('/content/df_space.csv', sep=';', header=True)
+#outra maneira
+df = spark.read.format("csv").load("/content/diabetic_data.csv", header = True, multiline = True)
+#outra maneira
+df1 = spark\
+.read.format("csv")\
+.option("interSchema", "True")\
+.option("header","True")\
+.csv('/content/diabetic_data.csv')
 
 transformar em df pandas
 dfPandas = df1.toPandas()
+
 
 ----------------------------------
 Select
