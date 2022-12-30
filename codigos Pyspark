@@ -45,6 +45,11 @@ df.filter("nome_coluna > 120").show()
 #localisar
 df2 = df.filter(F.col("nome_coluna").contains(o que estou procurando))
 
+#localisar em todas as colunas
+for c in df.columns:
+  num = df.filter(F.col(c)== '?').count()
+  print(c,num)
+
 # Definindo o primeiro filtro
 filterA = df.origin == "SEA"
 
