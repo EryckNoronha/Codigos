@@ -231,6 +231,21 @@ selected1.show(5)
 #remover coluna
 df = df.drop('nome da coluna')
 
+#EXCLUIR LINHA INDESEJADA
+df_novo = df.where(df.diag_1 != '?')\
+.where(df.diag_2 != '?')\
+.where(df.diag_3 != '?')\
+.where(df.discharge_disposition_id != '11')\
+.where(df.race != '?')\
+.where(df.gender != 'Unknown/Invalid')
+
+#EXCLUIR NA VASIOS
+df.na.drop(subset=["population","type"]) \
+   .show(truncate=False)
+
+
+df_novo = df_novo.drop('weight','payer_code','medical_specialty','citoglipton', 'examide')
+
 #Retirando as datas e passando colunas para tipos corretos.
 flights = flights.\
         withColumn("new_air_time", col("air_time").cast("integer")).drop("air_time")
