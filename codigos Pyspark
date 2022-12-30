@@ -117,7 +117,11 @@ Visualizar
 das pessoas media = df.select(F.mean('idade')).collect()[0][0] --> [0] linha1, [0]--> coluna 1
 df.groupBy().mean('idade').show()
 
+#contar itens da coluna
+df.groupBy("nome da colunja").count().show()
+
 #visualizar datasets disponiveis em diretório
+#somente databricks
 display(dbutils.fs.ls("caminho"))
 
 #filtrar colunas reduzidas e condição
