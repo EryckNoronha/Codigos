@@ -99,9 +99,9 @@ arquivo  = "caminho" -> transformou em uma str
 #criando arquivo
 df = spark\ 
 .read.format("csv")\
-.opition("interSachema", "True")\ #interSachema escolhe altomatico os tipos dos dados para trabalhar
+.opition("interSchema", "True")\ #interSachema escolhe altomatico os tipos dos dados para trabalhar
 .opitions("header","True")\ #tem cabeçalho
-.csv(arquivo) #localisação dos arquivos
+.csv('caminho arquivo') #localisação dos arquivos
 
 
 tipos dados pyspark
