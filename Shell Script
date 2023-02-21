@@ -40,7 +40,13 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 
     Mod.1 #4 - Pwd: Obter o endereço do diretório atual no terminal
     Mod.1 #5 - Cd: Alterar o diretório corrente no terminal
+    
     Mod.1 #6 - Ls: Exibir o conteúdo de um diretório no terminal
+               ls -i: Exibi os inouds (numeros de registro dos documentos)
+               ls *.mkv: Exibe todos os aquivos com a extenção colocada apos o ponto.
+               ls -a : exibe arquivos ocultos (obs. todo arquivo que começa com ponto é um arquivo oculto)
+               
+               
     Mod.1 #7 - Echo: Exibir mensagens na tela do terminal
 
 ## Fase 3
