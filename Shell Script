@@ -24,10 +24,15 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
  ## Introdução
 
    - Shell Script profissional Módulo 1 #0 - Introdução
+   
+
 
 ## Fase 1
 
     Mod.1 #1 - Descobrindo o terminal
+               Abrir o prompit --> Ctrl + Alt + T
+               Nova aba no terminal --> Shift + Ctrl + T               
+               
     Mod.1 #2 - Clear, Reset, Ctrl + L: Limpar a tela do terminal
     Mod.1 #3 - O que é shell? O que é shell script?
 
