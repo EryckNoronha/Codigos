@@ -50,11 +50,20 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
     Mod.1 #7 - echo: Exibir mensagens na tela do terminal, exibe variaveis.obs echo $eOnomeDaVariavel
                echo -e: interpreta caracteres especiais
                echo "prenchimento qualque" >> aquivo.txt : Vaicriar e adicionar o que está entre as aspas duplas no arqivo.txt
+                   obs. cat + nomeArquivo.txt exibe o que tem no arquivo
 
 ## Fase 3
 
     Mod.1 #8 - Chmod e ls: Alterar permissões de arquivos no linux
-    Mod.1 #9 - Basename e dirname
+               chmod u=rwx nomeDoArquivo.txt obs u é de usuario, g= grupo e o=outros usuarios
+             Permições do arquivo na consilta ls -l
+             -rw- r-- r-- r=leitira w=escrita
+             drwx r-x r-x tudo e d= diretorio e x=execução 
+             
+    Mod.1 #9 - basename: exibe nome do arquivo
+               basename + $Nome da variavel + estenção do arquivo: retira a extenção do nome do arquivo
+               dirname: exibe o caminho do aquivo
+    
     Mod.1 #10 - History: Exibir o histórico de comandos
 
 ## Fase 4
