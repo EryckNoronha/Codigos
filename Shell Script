@@ -50,6 +50,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
     Mod.1 #7 - echo: Exibir mensagens na tela do terminal, exibe variaveis.obs echo $eOnomeDaVariavel
                echo -e: interpreta caracteres especiais
                echo "prenchimento qualque" >> aquivo.txt : Vaicriar e adicionar o que está entre as aspas duplas no arqivo.txt
+               echo "prenchimento qualque" > aquivo.txt: caso exita vai apagar e substituir
                    obs. cat + nomeArquivo.txt exibe o que tem no arquivo
 
 ## Fase 3
@@ -107,10 +108,18 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 cat -n arquivo1.txt: exibe o arquivo com o numero de linhas
                 
     Mod.1 #18 - rm: Remover arquivos e diretórios
+                rm -r diretorio/: remove o diretorio mesmo não estando vasio 
+                rm -i arquivo.txt: recebe a confirmação se quer remover por conta do -i
+                rm -i diretorio/*:  asterico representa todo conteudo do diretório               
+                
 
 ## Fase 6
 
-    Mod.1 #19 - Pipe: Direcionar saídas e entradas dos comandos no shell
+    Mod.1 #19 - pipe: Direcionar saídas e entradas dos comandos no shell
+               \ : conta o comando em varias linhas
+               obs. bc -l: exibe calculadora do teminal -l é para fazer contas decimais
+               echo "2+3" | bc -l: estabeleceu relaçãoe ntre comandos
+               
     Mod.1 #20 - Cut: Filtrar saídas do comando cat e arquivos csv
     Mod.1 #21 - Head: Exibir as primeiras linhas de arquivos
     Mod.1 #22 - Tail: Exibir as últimas linhas de arquivos
