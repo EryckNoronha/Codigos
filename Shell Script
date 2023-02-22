@@ -64,17 +64,30 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                basename + $Nome da variavel + estenção do arquivo: retira a extenção do nome do arquivo
                dirname: exibe o caminho do aquivo
     
-    Mod.1 #10 - History: Exibir o histórico de comandos
+    Mod.1 #10 - history: Exibir o histórico de comandos
+                tras numero do estorico dos comandos se colocar esclamação e numero do momando ele será executado
+                ex. !1996
+                    !! executa o ultimo comenado executado
+                history | tail -5 : ultimas cinco linhas
 
 ## Fase 4
 
-    Mod.1 #11 - Mkdir e mktemp: Criar diretórios e arquivos temporários
+    Mod.1 #11 - mkdir: Criar diretórios 
+                mkdir -p ./teste/teste2/teste3: cria um diretório dentro do outro 
+                mktemp: cria arquivos temporários por padrão no no diretorio /tmp
+                
     Mod.1 #12 - Árvore de diretórios no linux e revisão dos comandos
-    Mod.1 #13 - Diretórios ponto e ponto-ponto
+    
+    
+    Mod.1 #13 - Diretórios ponto: Abreviação do diretório atual
+                     ponto-ponto: Diretório acima anterior
 
 ## Fase 5
 
-    Mod.1 #14 - Touch: Criar arquivos em branco e arquivos ocultos
+    Mod.1 #14 - touch: Criar arquivos em branco vasio e arquivos ocultos
+                touch .oculto.txt: o pnto na frente do arquivo cria arquivo oculto
+                nautilus . &: abrir a pasta atual e o & significa que não ficará vinculado ao terminal
+                
     Mod.1 #15 - Mv: Mover arquivos e diretórios
     Mod.1 #16 - Cp: Copiar arquivos e diretórios
     Mod.1 #17 - Cat: Concatenar e exibir o conteúdo de arquivos
