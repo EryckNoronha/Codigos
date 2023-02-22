@@ -120,7 +120,13 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                obs. bc -l: exibe calculadora do teminal -l é para fazer contas decimais
                echo "2+3" | bc -l: estabeleceu relaçãoe ntre comandos
                
-    Mod.1 #20 - Cut: Filtrar saídas do comando cat e arquivos csv
+    Mod.1 #20 - cut: Filtrar saídas do comando cat e arquivos csv
+                echo "eryck" | cur -c1: seleciona o primeiro caracter "e"
+                echo "eryck" | cur -c2-4: seleciona "ryc"
+                echo -e "1,2,3\n4,5,6\n7,8,9" >> matriz.csv: criando um arquivo csv
+                cat matriz.csv | cut -d"," -f1: -d é o delimitador e -f1 é a primeira coluna
+                
+             
     Mod.1 #21 - Head: Exibir as primeiras linhas de arquivos
     Mod.1 #22 - Tail: Exibir as últimas linhas de arquivos
     Mod.1 #23 - Tail -f: Monitorar arquivos com o comando tail -f
