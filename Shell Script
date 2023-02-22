@@ -127,9 +127,15 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 cat matriz.csv | cut -d"," -f1: -d é o delimitador e -f1 é a primeira coluna
                 
              
-    Mod.1 #21 - Head: Exibir as primeiras linhas de arquivos
-    Mod.1 #22 - Tail: Exibir as últimas linhas de arquivos
-    Mod.1 #23 - Tail -f: Monitorar arquivos com o comando tail -f
+    Mod.1 #21 - head: Exibir as primeiras linhas de arquivos
+                head -n 15 nomeDoarquivo.txt: exibe as 15 primeiras linhas                
+    
+    Mod.1 #22 - tail: Exibir as últimas linhas de arquivos
+                tail -n 15 nomeDoarquivo.txt: exibe as 15 ultimas linhas    
+    
+    Mod.1 #23 - tail -f: Monitorar arquivos com o comando tail -f
+                obs. abre novo terminal que atualisa toda vez que insere no arquivo
+                sleep 5; echo "texto inserido" >> nomeDoarquivo.txt: ponto e virgula executa dois comando ao mesmo tempo
 
 ## Fase 7
 
