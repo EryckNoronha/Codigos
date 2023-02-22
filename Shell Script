@@ -94,11 +94,13 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 mv nomeDoArquivo.txt /diretorio: moverá para o diretorio
                 mv diretorio/nomearquivo.txt . : move para o diretorio atual
                 mv diretorio1/ diretorio2/ : move o diretorio1 para o diretorio2 
-                mv diretorio2/diretorio1 . : volta para o diretorio atual
-                
+                mv diretorio2/diretorio1 . : volta para o diretorio atual            
+   
+    Mod.1 #16 - cp: Copiar arquivos e diretórios
+                cp nomedo arquivo.txt diretorio/seQuiserNovoNome.txt: como o arquivo para outro diretório
+                cp -r diretorio/diretorio2/: copia o diretorio obs. é necessário o -r copia diretorio por inteiro
     
     
-    Mod.1 #16 - Cp: Copiar arquivos e diretórios
     Mod.1 #17 - Cat: Concatenar e exibir o conteúdo de arquivos
     Mod.1 #18 - Rm: Remover arquivos e diretórios
 
