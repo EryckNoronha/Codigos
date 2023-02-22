@@ -87,8 +87,17 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
     Mod.1 #14 - touch: Criar arquivos em branco vasio e arquivos ocultos
                 touch .oculto.txt: o pnto na frente do arquivo cria arquivo oculto
                 nautilus . &: abrir a pasta atual e o & significa que não ficará vinculado ao terminal
+                            ctrl + h: habilita ou desabilita arquuivos ocultos dentro da janela com os aqruivos fora do terminal
+                gedit .oculto.txt &: vai abrir o arquivo txt com o editor de texto fora do terminal
                 
-    Mod.1 #15 - Mv: Mover arquivos e diretórios
+    Mod.1 #15 - mv: Mover arquivos, diretórios e renomear
+                mv nomeDoArquivo.txt /diretorio: moverá para o diretorio
+                mv diretorio/nomearquivo.txt . : move para o diretorio atual
+                mv diretorio1/ diretorio2/ : move o diretorio1 para o diretorio2 
+                mv diretorio2/diretorio1 . : volta para o diretorio atual
+                
+    
+    
     Mod.1 #16 - Cp: Copiar arquivos e diretórios
     Mod.1 #17 - Cat: Concatenar e exibir o conteúdo de arquivos
     Mod.1 #18 - Rm: Remover arquivos e diretórios
