@@ -101,8 +101,12 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 cp -r diretorio/diretorio2/: copia o diretorio obs. é necessário o -r copia diretorio por inteiro
     
     
-    Mod.1 #17 - Cat: Concatenar e exibir o conteúdo de arquivos
-    Mod.1 #18 - Rm: Remover arquivos e diretórios
+    Mod.1 #17 - cat: Concatenar e exibir o conteúdo de arquivos
+                cat arquivo1.txt arquivo2.txt: exibe os dois arquivos ao mesmo tempo
+                cat arquivo1.txt arquivo2.txt >> arqConcatenado.txt: junta os dois arquivos e cria um novo com as duas informações
+                cat -n arquivo1.txt: exibe o arquivo com o numero de linhas
+                
+    Mod.1 #18 - rm: Remover arquivos e diretórios
 
 ## Fase 6
 
