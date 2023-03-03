@@ -116,9 +116,9 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 ## Fase 6
 
     Mod.1 #19 - pipe: Direcionar saídas e entradas dos comandos no shell
-               \ : conta o comando em varias linhas
+               \ : corta o comando em varias linhas
                obs. bc -l: exibe calculadora do teminal -l é para fazer contas decimais
-               echo "2+3" | bc -l: estabeleceu relaçãoe ntre comandos
+               echo "2+3" | bc -l: estabeleceu relação entre comandos
                
     Mod.1 #20 - cut: Filtrar saídas do comando cat e arquivos csv
                 echo "eryck" | cur -c1: seleciona o primeiro caracter "e"
