@@ -117,8 +117,10 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 
     Mod.1 #19 - pipe: Direcionar saídas e entradas dos comandos no shell
                \ : corta o comando em varias linhas
+               / : representa o separador dos diretórios
                obs. bc -l: exibe calculadora do teminal -l é para fazer contas decimais
                echo "2+3" | bc -l: estabeleceu relação entre comandos
+               cat <nomearquivo.txt >> aquivoNovo.txt : Esta direcionando o arquivo ao comando cat e salvando
                
     Mod.1 #20 - cut: Filtrar saídas do comando cat e arquivos csv
                 echo "eryck" | cur -c1: seleciona o primeiro caracter "e"
