@@ -142,8 +142,14 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 
 ## Fase 7
 
-    Mod.1 #24 - Seq: Exibir sequências de números e laços de repetição
-    Mod.1 #25 - Wc: Exibir número de linhas, palavras e caracteres de arquivo
+    Mod.1 #24 - seq: Exibir sequências de números e laços de repetição
+                seq 0 2 10 - significa que vai iniciar com zero, vai pular de dois em dois até dez
+                
+    Mod.1 #25 - wc: Exibir número de linhas, palavras e caracteres de arquivo
+                wc -l texto.txt: somente numero de linhas
+                wc -w texto.txt: somente numero de palavras
+                wc -m texto.txt: somente numero de caracteres
+    
     Mod.1 #26 - Tee: Gerar arquivos de log das saídas de um pipe
     Mod.1 #27 - Date (Parte 1): Exibir data e hora local em formato específico
     Mod.1 #28 - Date (Parte 2): Mais sobre descritores de formato
