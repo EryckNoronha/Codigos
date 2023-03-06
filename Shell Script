@@ -155,7 +155,38 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 obs. por padrão subescreve 
                 echo "1,2,3" | tee -a log.txt | wc -> -a é a flag de append adiciona o log na ultima linha
     
-    Mod.1 #27 - Date (Parte 1): Exibir data e hora local em formato específico
+    Mod.1 #27 - date (Parte 1): Exibir data e hora local em formato específico
+                obs baseado no tempo UTC
+                data -u mostra a hora UTC
+                data -d today: data hoje
+                data -d tomorrow: data amanha
+                data -d yesterday: data ontem
+                data -d "2 days ago": data dois dias atras
+                data -d "5 weeks": cinco semanas para frente
+                
+                obs. outras formas de expresar as datas
+                data +%d/%m/%y - o simbulo % indica que o caracter é um descritor de formato
+Alguns formatos usados pelo comando:
+%A : dia da semana (domingo, …, sábado).
+%B : nome do mês (janeiro, …, dezembro).
+%H : hora do dia (0 a 23).
+%M : minuto (0 a 59).
+%S : segundos (0 a 61).
+%T : hora no formato hh:mm:ss.
+%Y : ano.
+%a : dia da semana abreviado (dom, …, sab).
+%b : nome do mês abreviado (jan, …, dez).
+%c : dia da semana, data e hora.
+%d : dia do mês.
+%j : dia ano (1 a 366).
+%m : mês (1 a 12).
+%s : número de segundos desde das zero horas de 01/01/1970.
+%w : dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
+%x : representação da data local.
+%y : os dois últimos dígitos do ano.
+
+                
+                               
     
     
     Mod.1 #28 - Date (Parte 2): Mais sobre descritores de formato
