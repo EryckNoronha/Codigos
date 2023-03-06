@@ -110,7 +110,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
     Mod.1 #18 - rm: Remover arquivos e diretórios
                 rm -r diretorio/: remove o diretorio mesmo não estando vasio 
                 rm -i arquivo.txt: recebe a confirmação se quer remover por conta do -i
-                rm -i diretorio/*:  asterico representa todo conteudo do diretório               
+                rm -i diretorio/*:  asterico representa todo conteudo do diretório- não remove a pasta mas remove os arquivos internos.               
                 
 
 ## Fase 6
