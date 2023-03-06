@@ -183,13 +183,12 @@ Alguns formatos usados pelo comando:
 %s : número de segundos desde das zero horas de 01/01/1970.
 %w : dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
 %x : representação da data local.
-%y : os dois últimos dígitos do ano.
-
-                
-                               
+%y : os dois últimos dígitos do ano    
     
-    
-    Mod.1 #28 - Date (Parte 2): Mais sobre descritores de formato
+    Mod.1 #28 - date (Parte 2): Mais sobre descritores de formato
+                data +%d%t%m%t%Y - a letra t representa um espaço de tab
+                data +%d%n%m%n%Y - a letra n representa quebra de linha
+                                
 
 ## Fase 8
 
