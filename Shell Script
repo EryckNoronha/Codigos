@@ -150,8 +150,14 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 wc -w texto.txt: somente numero de palavras
                 wc -m texto.txt: somente numero de caracteres
     
-    Mod.1 #26 - Tee: Gerar arquivos de log das saídas de um pipe
+    Mod.1 #26 - tee: Gerar arquivos de log das saídas de um pipe
+                echo "1,2,3" | tee log.txt | wc -> o comando tee guardou a variavel de log no arquivo log.txt e o comando rodou normal 
+                obs. por padrão subescreve 
+                echo "1,2,3" | tee -a log.txt | wc -> -a é a flag de append adiciona o log na ultima linha
+    
     Mod.1 #27 - Date (Parte 1): Exibir data e hora local em formato específico
+    
+    
     Mod.1 #28 - Date (Parte 2): Mais sobre descritores de formato
 
 ## Fase 8
