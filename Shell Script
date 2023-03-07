@@ -193,10 +193,13 @@ Alguns formatos usados pelo comando:
 ## Fase 8
 
     Mod.1 #29 - rev: Reverter sequências de caracteres
-                vi nomeArquivo.txt : abre o editor de texto no arquivo
+                vi nomeArquivo.txt : abre o editor de texto no arquivo    
     
-    
-    Mod.1 #30 - Paste: Concatenar arquivos por colunas
+    Mod.1 #30 - paste: Concatenar arquivos por colunas
+                paste documento1.txt documento2.txt -d; -> os dois arquivos serão concatenados por coluna e separados por ponto e virgula
+                paste documento1.txt documento2.txt -d"\n" -> vai pular linhas
+                 paste documento1.txt documento2.txt -d; >> cadastro.csv -> salvando em um novo documento
+       
     Mod.1 #31 - Cal: Exibir o calendário na tela do terminal
     Mod.1 #32 - Sort (Parte 1): Organizar lista em ordem alfabética e numérica
     Mod.1 #33 - Sort (Parte 2): Organizar lista por coluna e na ordem inversa
