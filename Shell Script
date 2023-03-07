@@ -229,7 +229,10 @@ Alguns formatos usados pelo comando:
                 
                 echo -e "um\ndois\ntres" | xargs \
                 -I % -p bash -c 'touch %.txt' : percorre as instrings -I para colocar o caracter de substituição chama o bach para criar o arquivo
-                que reseberá o nome no lugar da %, -c ler a partir de uma string de comando                
+                que reseberá o nome no lugar da %, -c ler a partir de uma string de comando  
+                
+                ls -1 | xargs \
+                -I % -p bash -c 'rm %' : vai remover perguntando sobre os arquivos
                 
                 
     
