@@ -215,7 +215,8 @@ Alguns formatos usados pelo comando:
                 sort -k2 arquivo.txt : -k é para escolher a coluna que vai ordenar o 2 é o numero da coluna
                 sort -r: -r coloca em ordem inversa
     
-    Mod.1 #34 - Sort (Parte 3): Organizar lista grande de arquivos por coluna
+    Mod.1 #34 - sort (Parte 3): Organizar lista grande de arquivos por coluna
+                sort -t"-" -k3 -n arquivo.txt: -t é o delimitador e n é para organizar numericamente
 
 ## Fase 9
 
