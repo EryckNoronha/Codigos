@@ -220,7 +220,19 @@ Alguns formatos usados pelo comando:
 
 ## Fase 9
 
-    Mod.1 #35 - Xargs: Executar comandos em loop sem usar laços
+    Mod.1 #35 - xargs: Executar comandos em loop sem usar laços
+                echo "1 2 3 4 5 6" | xargs -n 3 : vai juntar de tres em tres e pular linha
+                xargs -a nomeArquivo.txt -n2 : separa duas colunas por espaço em branco
+                echo "um dois tres" | xargs mkdir: cria tres diretorios em sequencia
+                echo "um dois tres" | xargs -t rm -r: remove os tres diretoris criados
+                obs -p perdgunta se quer condinuar o loop de comandos
+                
+                echo -e "um\ndois\ntres" | xargs \
+                -I % -p bash -c 'touch %.txt' : percorre as instrings -I para colocar o caracter de substituição chama o bach para criar o arquivo
+                que reseberá o nome no lugar da %, -c ler a partir de uma string de comando                
+                
+                
+    
     Mod.1 #36 - Sed (Parte 1): Editor de fluxo de texto do terminal
     Mod.1 #37 - Sed (Parte 2): Substituir uma string por outra
     Mod.1 #38 - Sed (Parte 3): Deletar linhas e strings de arquivo de texto
