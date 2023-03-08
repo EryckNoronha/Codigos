@@ -254,9 +254,15 @@ Alguns formatos usados pelo comando:
                 sed -i 's/texto1/texto2/' texto.txt: -i é para substituir no arquico, 's' é de substituição, vai substituir o texto1 para o texo2
                 sed -i 's/texto1/texto2/;s/texto3/texto4/' texto.txt: faz trocas simultanias 
                 sed -i '3,5s/^/#/' texto.txt : insere no intervalo da terceira linha à aquinta coloca # que é o caracter de comentario
-                  
-    
+                sed -i 'palavra/s/$/o que vai inserir/' texto.txt : ao invez de colocar o numero da linha coloca a palavra que identiufica a frase
+                e insere no final demostrando com caraquiter $.
+                    
     Mod.1 #38 - sed (Parte 3): Deletar linhas e strings de arquivo de texto
+                sed -i 's/palavra//g' texto.txt: o g força fazer em todas as ocorrencias da linha. no exemplo esta substituindo por nada   
+                sed -i '/^\*/d' texto.txt: ^ indica que esta no comerço da linha, \* para ler literalmente o simbulo, 'd' para deletar
+                então vai deletar todas as linhas que começam com *
+                sed -i '6d' texto.txt: deleto a linha 6
+                
 
 ## Fase 10
 
