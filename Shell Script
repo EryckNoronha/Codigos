@@ -236,9 +236,27 @@ Alguns formatos usados pelo comando:
                 
                 
     
-    Mod.1 #36 - Sed (Parte 1): Editor de fluxo de texto do terminal
-    Mod.1 #37 - Sed (Parte 2): Substituir uma string por outra
-    Mod.1 #38 - Sed (Parte 3): Deletar linhas e strings de arquivo de texto
+    Mod.1 #36 - sed (Parte 1): Editor de fluxo de texto do terminal
+    
+                30 exemplos do comando sed -com regex
+                https://terminalroot.com.br/2015/07/30-exemplos-do-comando-sed-com-regex.html
+                
+                sed -n '1p' texto.txt : -n para imnprimmir só o resultado, 1 é a linha e p é de print
+                sed -n '/palavra/p' texto.txt: vai buscar a palavra entre as barras
+                sed -n '1,3p' texto.txt: imprime o intervalo da linha um a tres
+                ^ simbulo para marcar o comerço da frase
+                $ simbulo para marcar o final da frase
+                  Ex. sed -n '/e$/p' texto.txt: todas as frases que terminarem com a letra 'e' vão ser printadas
+                      sed -n '/^o/p' texto.txt: todas as frases que começam com a letra 'o' vão ser printadas
+                      obs. é casesencitive             
+                
+    Mod.1 #37 - sed (Parte 2): Substituir uma string por outra
+                sed -i 's/texto1/texto2/' texto.txt: -i é para substituir no arquico, 's' é de substituição, vai substituir o texto1 para o texo2
+                sed -i 's/texto1/texto2/;s/texto3/texto4/' texto.txt: faz trocas simultanias 
+                sed -i '3,5s/^/#/' texto.txt : insere no intervalo da terceira linha à aquinta coloca # que é o caracter de comentario
+                  
+    
+    Mod.1 #38 - sed (Parte 3): Deletar linhas e strings de arquivo de texto
 
 ## Fase 10
 
