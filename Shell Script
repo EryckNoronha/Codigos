@@ -266,8 +266,16 @@ Alguns formatos usados pelo comando:
 
 ## Fase 10
 
-    Mod.1 #39 - Grep (Parte 1): Pesquisar strings em arquivo de texto
-    Mod.1 #40 - Grep (Parte 2): Exibir o contexto de pesquisa
+    Mod.1 #39 - grep (Parte 1): Pesquisar strings em arquivo de texto
+                grep -n PALAVRA texto.txt: vai buscar a palavra no arquivo e printar as linhas com o numero de linha
+                grep -v PALAVRA texto.txt: vai as linhas que não tem a PALAVRA e printar tudo
+                grep -c PALAVRA texto.txt: conta o numero de linhas que aparece a PALAVRA                
+    
+    Mod.1 #40 - grep (Parte 2): Exibir o contexto de pesquisa
+                grep -B 2 
+                
+    
+    
     Mod.1 #41 - Tree: Lista hierárquica de diretórios em formato de árvore
 
 ## Fase 11
