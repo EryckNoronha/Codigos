@@ -55,7 +55,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 
 ## Fase 3
 
-    Mod.1 #8 - Chmod e ls: Alterar permissões de arquivos no linux
+    Mod.1 #8 - chmod e ls: Alterar permissões de arquivos no linux
                chmod u=rwx nomeDoArquivo.txt obs u é de usuario, g= grupo e o=outros usuarios
              Permições do arquivo na consilta ls -l
              -rw- r-- r-- r=leitira w=escrita
@@ -193,7 +193,7 @@ Alguns formatos usados pelo comando:
 ## Fase 8
 
     Mod.1 #29 - rev: Reverter sequências de caracteres
-                vi nomeArquivo.txt : abre o editor de texto no arquivo    
+                vi nomeArquivo.txt : abre o editor de texto no arquivo obs. sair e salvar-:wq  
     
     Mod.1 #30 - paste: Concatenar arquivos por colunas
                 paste documento1.txt documento2.txt -d; -> os dois arquivos serão concatenados por coluna e separados por ponto e virgula
@@ -283,12 +283,34 @@ Alguns formatos usados pelo comando:
                 para instalar:
                 sudo apt-get install tree
                 
-                tree diretorio/ -o novodocumento.txt: vai salvar a arvore de pastas em um arquivo
+                tree diretorio/ -o novodocumento.txt: vai salvar a arvore de pastas em um arquivo             
                 
-                
-                
-
 ## Fase 11
 
-    Shell Script profissional Mod.1 #42 - Ln: Como criar links simbólicos e hardlinks em shell
-    Shell Script profissional Mod.1 #43 - Utilizando links simbólicos como referência à uma biblioteca
+   Mod.1 #42 - ln: Como criar links simbólicos e hardlinks em shell
+   * O link simbolico vai ser um atalho para um arquivo original os inodes serão diferentes
+   * inode: numero do arquivo
+   * alterando o link simbolico altera o arquivo original
+   * se o arquivo original for excluido o link é quebrado
+   
+               ln -s pasta1/pasta2/arquivo/arq.txt linkSimbolico: -s dis que é simbólico, passo o caminho do arquio e depois o nome do link simbolico que eu quero
+               file linkSimbolico: mostra o tipo do arquivo
+               ln pasta1/pasta2/arquivo/arq.txt hardlink: sem o 's' faz um hardilink, o inode será igual ele será um ponteiro para o arquivo original
+               caso o original for excluido o hard link não será quebrado.
+    
+   Mod.1 #43 - Utilizando links simbólicos como referência à uma biblioteca
+   
+               criar o aquivo de função
+               vi lib1.0.sh : vi é o editor de texto e a estenção sh é é para criar biblioteca de função
+                    :wq - sair e salvar do editor vi
+                    chmod +x lib1.0.sh: dá permição de executar
+                    ./lib1.0.sh: executa o arquivo
+               vi man.sh: cria a função principal
+                    ./diretorio/lib1.0.sh : escr5ito dentro de man.sh vai executar a bibilote lib1.0.sh
+                    
+               fazer um link simbolico na man faz com que para alterar a bibilioteca só apontar o link da man para nova biblioteca    
+               ln -s lib/lib1.0.sh link_lib: cria um link simbolico para ser chamado na função man com ./link_lib
+               
+               ln -s -f lib/lib2.0.sh link_lib: o link simbolico vai apontar para nova biblioteca sendo forrçado com -f
+               
+                    
