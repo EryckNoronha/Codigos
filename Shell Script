@@ -25,7 +25,10 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
 
    - Shell Script profissional Módulo 1 #0 - Introdução
    
-
+     man comando: documentação do comando
+     man -f comando: pequena descrição
+     man -w comando: onde fica a documentação
+     
 
 ## Fase 1
 
