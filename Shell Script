@@ -277,10 +277,16 @@ Alguns formatos usados pelo comando:
                 grep -C 2 "palavra ou texto" texto.txt: -C é para mostrar as linhas antes e depois, 2 é a quantidade de linhas que vai mostrar
                 obs. para saber se o comando foi bem sucedido faço:
                 echo $? : se retornar 0 é por que o comando anterior foi bem sucedido
+                   
+    Mod.1 #41 - tree: Lista hierárquica de diretórios em formato de árvore
                 
-    
-    
-    Mod.1 #41 - Tree: Lista hierárquica de diretórios em formato de árvore
+                para instalar:
+                sudo apt-get install tree
+                
+                tree diretorio/ -o novodocumento.txt: vai salvar a arvore de pastas em um arquivo
+                
+                
+                
 
 ## Fase 11
 
