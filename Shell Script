@@ -272,7 +272,11 @@ Alguns formatos usados pelo comando:
                 grep -c PALAVRA texto.txt: conta o numero de linhas que aparece a PALAVRA                
     
     Mod.1 #40 - grep (Parte 2): Exibir o contexto de pesquisa
-                grep -B 2 
+                grep -B 2 "palavra ou texto" texto.txt: -B é para mostrar as linhas anteriores, 2 é a quantidade de linhas que vai mostrar
+                grep -A 2 "palavra ou texto" texto.txt: -A é para mostrar as linhas depois, 2 é a quantidade de linhas que vai mostrar
+                grep -C 2 "palavra ou texto" texto.txt: -C é para mostrar as linhas antes e depois, 2 é a quantidade de linhas que vai mostrar
+                obs. para saber se o comando foi bem sucedido faço:
+                echo $? : se retornar 0 é por que o comando anterior foi bem sucedido
                 
     
     
