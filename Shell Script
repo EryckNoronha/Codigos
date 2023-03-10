@@ -316,4 +316,17 @@ Alguns formatos usados pelo comando:
                
                ln -s -f lib/lib2.0.sh link_lib: o link simbolico vai apontar para nova biblioteca sendo forrçado com -f
                
-                    
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+INTERMEDIARIO
+
+Aula 1: Executar comando em um documento Script
+        touch taxto.sh -> .sh é um arquivo shell script 
+        gedit texto.sh & -> editor de texto para acessar o arquivo, & é para continuar utilizando o terminal
+           #!/bin/bash -> (shebang) no inicio do documento para dizer quem vai interpretar o comnado que no caso é o sell bash que está dentro da pasta bin
+           echo "Olá Mundo!" - dentro do documento para teste
+           antes de executar tenho que dar permição
+           chmod 777 texto.sh -> 777 dá todas as permições, a permissão é apenas uma vez
+           ./texto.sh -> executa o arquivo
+           
+           
