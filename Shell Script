@@ -330,3 +330,18 @@ Aula 1: Executar comando em um documento Script
            ./texto.sh -> executa o arquivo
            
            
+           
+Aula 2: read: comando para escrever na variável
+        read X: vai esperar eu atribuir o valor para a variavel X
+        read -p "Digite seu nome" NOME: vai aparecer a frase esperando o valor para variavel NOME
+        _______________________________________   
+           Programa para documento script:
+           
+           echo "Bem vindo ao programa!"
+           
+           read -p "Digite seu nome" NOME
+           
+           echo "$NOME, Bem vindo!"
+       ________________________________________
+       
+Aula 3 
