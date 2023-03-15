@@ -344,4 +344,16 @@ Aula 2: read: comando para escrever na variável
            echo "$NOME, Bem vindo!"
        ________________________________________
        
-Aula 4:  
+Aula 4:  Calculadora Idade data
+criar arquivo: touch calculado_idade.sh
+        !/bin/bash
+
+        read -p "Digite seu nome " NOME
+        read -p "Digite a data de nascimento (DD/MM/AAAA) " DATA
+
+        ANO_NAC=$(echo $DATA | cut -d"/" -f3)
+        ANO_HJ=$(date +%Y)
+        IDADE=$(echo "$ANO_HJ-$ANO_NAC" | bc -l)
+
+        echo "Olá $NOME"
+        echo "Sua idade é $IDADE"
