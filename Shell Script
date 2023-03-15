@@ -357,3 +357,34 @@ criar arquivo: touch calculado_idade.sh
 
         echo "Olá $NOME"
         echo "Sua idade é $IDADE"
+
+Aula 5: Expanção de variavel 
+
+      var="Eryck de Noronha"
+      echo ${var:8} #mostra depois da posição 8
+      Noronha      
+      echo ${#var} #conta quatas letras
+      16
+      echo ${var:0:5} #Busca intervalo
+      Eryck
+      echo ${var/de/''} #Subistitui
+      Eryck Noronha
+      cho ${var// /} #Tira todos os espaços em branco
+      obs. // em todas as ocorrencias
+      
+      file="arquivo.txt"
+      echo ${file##*.} tira tudo da variavel antes do ponto
+      txt   
+      file="arquivo.txt"
+      echo ${file%%.*} tira tudo da variavel depois do ponto
+      arquivo
+      echo ${file~}iverte a primeira letra se for minuscula fica maiuscula
+      Arquivo.txt
+      echo ${file^^}Tudo fica maiusculo
+      
+      Variavel vazia ou comvalor
+       echo ${variavel:- esta variavel está vazia} o sinal de - depois do : imprime a mensagem caso vazia
+       echo ${variavel:+ esta variavel tem valor} o sinal de + depois do : imprime caso esteja com valor
+       echo ${variavel:= valor padrão} o sinal de = depois do : insere um valor padrão
+       
+
