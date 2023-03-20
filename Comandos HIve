@@ -30,11 +30,27 @@ selecionar dados: select * from nomeTabela;
 selecionar algumas colunas: select coluna1, coluna2, coluna3 from nomeTabela;
 valores unicos coluna: select distinct nomeColuna from nomeTabela;
 filtro na linha: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo";
+
 mais de uma condição: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo" and nomeColune operadorLogico(ex. <> (diferente)) "valor do campo"
   TODAS AS CONDIÇÔES TEM QUE SER ATENDIDAS--->>> ex. select * from veiculos where status = "Disponivel" and diaria >= 1600;
+
 Ou uma ou outra condição: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo" or nomeColune operadorLogico(ex. <> (diferente)) "valor do campo"
   AL MENOS UMA DAS CONDIÇÔES TEM QUE SER ATENDIDAS--->>> ex. select * from veiculos where status = "Disponivel" or diaria >= 1600
+ordenar: select * from nomeTable order by nomeColuna1(ordera primeiro), nomeColuna2
+         obs decrescente: select * from nomeTable order by nomeColuna1 desc
 
+limete de registros: select * from locacao limit 5;
+ex. select * from locacao order by dataLocacao limit 5
+
+Agregação: select max(total) from nomeTable;
+         obs no lugar do mas pode ser: min, count, avg, sum ...
+         
+pesquisa texto: select * from nomeTabel where nomeColune like 'ABC%' --> qualquer coisa no lado direito
+                                                              '%ABC%' --> em algum lugar tenha 
+                                                              '%ABC' --> qualquer coisa esquerda
+                                                             
+clausula de conjunto: select * from nomeTable where nomeColuna in ('valor1','valor2');
+intervalo: select * from nomeTable where nomeColuna between 1000 and 2000;
 
 
 
