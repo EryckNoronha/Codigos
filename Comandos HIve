@@ -9,6 +9,7 @@ criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
               row format delimited fields terminated by ',' STORED AS TEXTFILE;
  
 inserir dados: LOAD DATA INPATH '/user/caminho/caminho/nomeArquivo.csv' INTO TABLE CLIENTES;
+inserir um campo: insert into nomeTabela values( 11, 'valor1','valor2', ...);
 ver dados: select * from nomeTabela;
 ver tabelas: show tables;
 descrição tabelas: describe nomeTabela;
@@ -52,6 +53,24 @@ pesquisa texto: select * from nomeTabel where nomeColune like 'ABC%' --> qualque
 clausula de conjunto: select * from nomeTable where nomeColuna in ('valor1','valor2');
 intervalo: select * from nomeTable where nomeColuna between 1000 and 2000;
 
+Junções
+INNER JOIN - SOMENTE A INTERCEÇÃO
+LEFT JOIN - ESQUERDA TUDO DIREITA SÓ EQUIVALENCIA
+RIGHT JOIN - DIREITA TUDO ESQUERDA SÓ EQUIVALENCIA
+FULL JOIN - JUNTA TUDO
+
+select loc.coluna1,descoluna2 from locacao loc (<-apelido)  
+join despachante des on (<-apelido) on (loc.id = des.id);
+
+select loc.coluna1,descoluna2 from locacao loc (<-apelido)  
+right join despachante des on (<-apelido) on (loc.id = des.id);
+
+Desnormalização (Juntar varias tabelas)
+
+select loc.coluna1,des.coluna2,cli.coluna4,veic.coluna5 from locacao loc (<-apelido)  
+join despachante des(<-apelido) on (loc.id = des.id)
+join clientes cli(<-apelido) on (loc.id = cli.id)
+join veiculo veic(<-apelido) on (loc.id = veic.id);
 
 
 
