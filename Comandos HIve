@@ -26,9 +26,14 @@ acessar database: select * from TBLS where DB_ID=numero_do_id_database;
 acessar tabelas: SELECT * FROM COLUMNS_V2 WHERE CD_ID = (NUMERO DA COLUNA *TBL_id)
 ----------------------------------------------------------------------------------
 
-
-
-
+selecionar dados: select * from nomeTabela;
+selecionar algumas colunas: select coluna1, coluna2, coluna3 from nomeTabela;
+valores unicos coluna: select distinct nomeColuna from nomeTabela;
+filtro na linha: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo";
+mais de uma condição: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo" and nomeColune operadorLogico(ex. <> (diferente)) "valor do campo"
+  TODAS AS CONDIÇÔES TEM QUE SER ATENDIDAS--->>> ex. select * from veiculos where status = "Disponivel" and diaria >= 1600;
+Ou uma ou outra condição: select * from nomeTabela where nomeColune operadorLogico(ex. <> (diferente)) "valor do campo" or nomeColune operadorLogico(ex. <> (diferente)) "valor do campo"
+  AL MENOS UMA DAS CONDIÇÔES TEM QUE SER ATENDIDAS--->>> ex. select * from veiculos where status = "Disponivel" or diaria >= 1600
 
 
 
