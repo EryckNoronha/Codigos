@@ -72,5 +72,33 @@ join despachante des(<-apelido) on (loc.id = des.id)
 join clientes cli(<-apelido) on (loc.id = cli.id)
 join veiculo veic(<-apelido) on (loc.id = veic.id);
 
-s
+Agrupando com valores unicos e somando valores
 
+select veic.modelo, sum(loc.total) from locacao loc
+join veiculos veic on (loc.id = veic.id)
+group by veic.modelo;
+
+select veic.modelo,desp.nome, AVG(loc.total) from locacao loc
+join veiculos veic on (loc.id = veic.id)
+join despachante desp on (loc.id=desp.id)
+group by veic.modelo, desp.nome;
+
+Condição para agregação (no final do group by
+
+select veic.modelo,desp.nome, AVG(loc.total) from locacao loc
+join veiculos veic on (loc.id = veic.id)
+join despachante desp on (loc.id=desp.id)
+group by veic.modelo, desp.nome having sum(loc.total) > 10000;
+
+Buscar mes e ano especificos
+select veic.modelo,desp.nome, sum(loc.total) from locacao loc
+join veiculos veic on (loc.id = veic.id)
+join despachante desp on (loc.id=desp.id)
+where month(loc.datalocacao) = 2 and year(loc.datalocacao) = 2019  ----> month busca mes, year busca ano
+group by veic.modelo, desp.nome
+
+Montando coluna mes e ano
+select veic.modelo,desp.nome, month(loc.datalocacao) Mes, year(loc.datalocacao) ANO from locacao loc
+join veiculos veic on (loc.id = veic.id)
+join despachante desp on (loc.id=desp.id)
+SITE COM COMANDOS HIVE: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
