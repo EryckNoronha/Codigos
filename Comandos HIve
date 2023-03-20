@@ -1,0 +1,14 @@
+Para iniciar:beeline
+conectar: !connect jdbc:hive2://
+
+criar Data base: CRATE DATA BASE NOME_DATABAS;
+criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
+              nome int,
+              nome string,
+              nome date )
+              row format delimited fields terminated by ',' STORED AS TEXTFILE;
+ 
+inserir dados: LOAD DATA INPATH '/user/caminho/caminho/nomeArquivo.csv' INTO TABLE CLIENTES;
+ver dados: select * from nomeTabela;
+
+
