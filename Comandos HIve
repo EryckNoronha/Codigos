@@ -15,13 +15,17 @@ descrição tabelas: describe nomeTabela;
 informações da estrutura da tabela: describe formatted nomeTablea;
 informações banco de dados: DESCRIBE DATABASE nomeDataBase;
 
+--------------------OUTRA MANEIRA DE ACESSAR DADOS HIVE-----------------------
 consultando Hcatalog no linux
 Conectando ao MySQL
 mysql -u root -pcloudera
 obs. metastore é onde tem as informações de catalogo do hive
 
 ver os bancos para ter acesso ao id do database: select * from DBS;
-acessar tabelas: select * from TBLS where DB_ID=numero_do_id_database;
+acessar database: select * from TBLS where DB_ID=numero_do_id_database;
+acessar tabelas: SELECT * FROM COLUMNS_V2 WHERE CD_ID = (NUMERO DA COLUNA *TBL_id)
+----------------------------------------------------------------------------------
+
 
 
 
