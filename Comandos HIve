@@ -72,5 +72,5 @@ join despachante des(<-apelido) on (loc.id = des.id)
 join clientes cli(<-apelido) on (loc.id = cli.id)
 join veiculo veic(<-apelido) on (loc.id = veic.id);
 
-
+s
 
