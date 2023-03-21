@@ -103,4 +103,15 @@ join veiculos veic on (loc.id = veic.id)
 join despachante desp on (loc.id=desp.id)
 SITE COM COMANDOS HIVE: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
-l
+
+-----------------Montando Sqoop---------------
+listar database
+sqoop list-databases --connect jdbc:mysql://localhost/ --username root --password cloudera
+
+listar tabelas
+sqoop list-tables --connect jdbc:mysql://localhost/retail_db --username root --password cloudera
+
+IMPORTANDO DO SQOOP PARA HIVE
+cria database no hive: create database retail_db;
+no bash: sqoop import-all-tables --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --hive-import --hive-overwrite --hive-database retail_db --create-hive-table --m 1;
+
