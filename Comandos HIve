@@ -139,4 +139,43 @@ ls '/home/cloudera/NomeNovo'
 ver o conteudo
 cat /user/cloudera/NomeNovo/00000-00 (o caminho foi mostrado com o comnado acima)
 
+------------ Criando Partição ---------------------------------------------------------
+ver configuração do paramnetro dynamic
+set hive.exec.dynamic.partition.mode; (obs. já devo estar usando o database no modo hive2)
+
+obs. se mode=strict tenho que mudar para mode=nonstrict
+mudando: set hive.exec.dynamic.partition.mode=nonstrict;
+
+criando tabela particionada:
+crate table NomeNovo (nome1 string, nome2 date, nome3 string, nome4 double) PARTITIONED BY (colunaParticionar string);
+
+inserindo dados:
+INSERT OVERWRITE TABLE NomeNovo PARTITIONED (colunaParticionar)
+select cli.nome1, des.nome2, loc.nome3, veic.nome4
+from locacao loc
+join despachante des on (loc.id = des.id)
+join clientes cli on (loc.id = cli.id)
+join veiculos veic on (loc.id = veic.id);
+
+-----------Criando Bucketing -----------------------
+
+criando tabela particionada:
+crate table NomeNovo (nome1 string, nome2 date, nome3 string, nome4 double)
+clustered by (colunaParticionar) into 4 buckets;
+
+
+inserindo dados:
+INSERT OVERWRITE TABLE NomeNovo 
+select cli.nome1, des.nome2, loc.nome3, veic.nome4
+from locacao loc
+join despachante des on (loc.id = des.id)
+join clientes cli on (loc.id = cli.id)
+join veiculos veic on (loc.id = veic.id);
+_-------------------------------------------------------------
+
+criando tabela temporaria
+crate temporary table nomeDela as select * tabela;
+
+
+
 
