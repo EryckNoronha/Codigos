@@ -102,3 +102,5 @@ select veic.modelo,desp.nome, month(loc.datalocacao) Mes, year(loc.datalocacao) 
 join veiculos veic on (loc.id = veic.id)
 join despachante desp on (loc.id=desp.id)
 SITE COM COMANDOS HIVE: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
+
+l
