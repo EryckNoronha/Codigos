@@ -124,5 +124,19 @@ no MySQL: insert into nomeTablea values (1, 2, 'texto');
 importando
 sqoop import --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --hive-import --hive-database retail_db --check-colun nomeColuna --incremental append --last-value numeroUltimoRegistro --table NomeTabela
 
+---------------Salvando no HDFS---------------------
+insert overwrite directory '/user/cloudera/NomeNovo' select * from nomeTabela;
+verificando no bash
+hdfs dfs -ls /user/cloudera/NomeNovo (será listado)
+para visualizar o conteudo
+hdfs dfs -cat /user/cloudera/NomeNovo/00000-00 (o caminho foi mostrado com o comnado acima)
+obs. o conteudo não pode ser lido por humano
+
+Salvar local
+insert overwrite local directory '/home/cloudera/NomeNovo' row format delimited fields terminated by ',' select * from nomeTabela
+verificando no bash
+ls '/home/cloudera/NomeNovo'
+ver o conteudo
+cat /user/cloudera/NomeNovo/00000-00 (o caminho foi mostrado com o comnado acima)
 
 
