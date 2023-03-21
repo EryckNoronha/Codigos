@@ -113,5 +113,16 @@ sqoop list-tables --connect jdbc:mysql://localhost/retail_db --username root --p
 
 IMPORTANDO DO SQOOP PARA HIVE
 cria database no hive: create database retail_db;
-no bash: sqoop import-all-tables --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --hive-import --hive-overwrite --hive-database retail_db --create-hive-table --m 1;
+no bash: sqoop import-all-tables --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --hive-import --hive-overwrite --hive-database retail_db --create-hive-table --m 1
+
+Verificando no MySQL se a tranferencia foi bem sucedida
+apos conectar no MySQL
+select (*) from order_items apos o mesmo select no hive para conferir
+
+Importação incremental, inserindo dados no MySQL e atualisando com Sqoop
+no MySQL: insert into nomeTablea values (1, 2, 'texto');
+importando
+sqoop import --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --hive-import --hive-database retail_db --check-colun nomeColuna --incremental append --last-value numeroUltimoRegistro --table NomeTabela
+
+
 
