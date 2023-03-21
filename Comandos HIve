@@ -1,6 +1,8 @@
 Para iniciar:beeline
 conectar: !connect jdbc:hive2://
 
+para sair:!q
+
 criar Data base: CRATE DATA BASE NOME_DATABAS;
 criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
               nome int,
@@ -174,7 +176,30 @@ join veiculos veic on (loc.id = veic.id);
 _-------------------------------------------------------------
 
 criando tabela temporaria
-crate temporary table nomeDela as select * tabela;
+crate temporary table nomeTabelaTemporaria as select * tabela;
+
+criando viw (atalho para consulta tabela)
+create viw if not exists nomeTbelaViw as
+select + joins e etc;
+
+----------------------ORC------------------------
+criando tabela
+CREATE EXTERNAL TABLE
+TABLEAorc (nome1 string, nome2 date, nome3 string, nome4 double)
+stored as orc;
+
+inserindo dado
+insert overwrite table TABELAorc select * from tabelaCopia;
+
+configurações se quizer padrão:
+hive.default.fileformat  ---- padrão:TextFile ---- opição: ORC
+hive.exec.orc.default.compress --- padrão: ZLIB --- opção: NONE,ZLIB,SNAPPY
+orc.compress --- padrão: ZLIB --- opção: NONE,ZLIB,SNAPPY
+orc.crate.index --- padrão: true --- opção --- true, false
+
+
+
+
 
 
 
