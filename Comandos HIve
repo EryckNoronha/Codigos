@@ -34,6 +34,24 @@ criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
                  fields terminated by '|' --> separado por pip
                  collection items terminated by ':' --> coleção na matriz são terminados com :
               STORED AS TEXTFILE;
+              
+criando tabvela em um diretorio:
+CREATE EXTERNAL TABLE user
+LOCATION '/local1/local2/';
+
+apagar tabela:
+DROP TABLE IF EXISTS user;
+
+mudar nome:
+ALTER TABLE user RENAME TO employees;
+
+adicionar coluna
+ALTER TABLE user  ADD COLUMNS (
+nome1 string,
+nome2 int);
+
+
+
 
 inserir dados: LOAD DATA INPATH '/user/caminho/caminho/nomeArquivo.csv' INTO TABLE CLIENTES;
 inserir um campo: insert into nomeTabela values( 11, 'valor1','valor2', ...);
