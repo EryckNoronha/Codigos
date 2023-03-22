@@ -156,6 +156,14 @@ join veiculos veic on (loc.id = veic.id)
 join despachante desp on (loc.id=desp.id)
 SITE COM COMANDOS HIVE: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
+Apelidando consulta:
+FROM(
+     SELECT coluna1, round(coluna2 * .01) as renomeColuna2
+     FROM tablea;
+) c
+SELECT c.coluna1, c.coluna2
+WHERE c.renomeColuna2 > 25;
+
 
 -----------------Montando Sqoop---------------
 listar database
