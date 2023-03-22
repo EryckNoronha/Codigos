@@ -19,12 +19,22 @@ conectar: !connect jdbc:hive2://
 para sair:!q
 
 criar Data base: CRATE DATA BASE NOME_DATABAS;
+
 criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
               nome int,
               nome string,
               nome date )
               row format delimited fields terminated by ',' STORED AS TEXTFILE;
- 
+outro exemplo
+criar tabela: CREATE EXTERNAL TABLE NOME_TABELA(
+              nome int,
+              nome string,
+              nome date )
+              row format delimited 
+                 fields terminated by '|' --> separado por pip
+                 collection items terminated by ':' --> coleção na matriz são terminados com :
+              STORED AS TEXTFILE;
+
 inserir dados: LOAD DATA INPATH '/user/caminho/caminho/nomeArquivo.csv' INTO TABLE CLIENTES;
 inserir um campo: insert into nomeTabela values( 11, 'valor1','valor2', ...);
 ver dados: select * from nomeTabela;
