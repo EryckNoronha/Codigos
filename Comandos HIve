@@ -12,6 +12,9 @@ Os tipos de dados do Hive incluem
     c. Structs (STRUCT<Data_type, Data_type2, ...>) 
     d. Union (UNIONTYPE<DATA_TYPE1, DATA_TYPE2, ...>)
 
+FUNÇÕES HIVE
+para ver funções : SHOW FUNCTIONS
+para saber sobre a função : DESCRIVE FUNCTION >NOME<    
 
 Para iniciar:beeline
 conectar: !connect jdbc:hive2://
