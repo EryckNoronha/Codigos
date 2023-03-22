@@ -59,6 +59,11 @@ descrição tabelas: describe nomeTabela;
 informações da estrutura da tabela: describe formatted nomeTablea;
 informações banco de dados: DESCRIBE DATABASE nomeDataBase;
 
+-------------------------------------
+ANALISAR A CONSULTA
+
+EXPLAIN SELECT (toda condição ...)
+
 ------------INDEX----------------------
 criar:
 CREATE INDEX table01_index ON TABLE table_01 (column2) as 'COMPACT'
