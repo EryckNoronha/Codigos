@@ -164,6 +164,10 @@ FROM(
 SELECT c.coluna1, c.coluna2
 WHERE c.renomeColuna2 > 25;
 
+fazendo cunsulta mudando o tipo da coluna
+SELECT coluna1 , coluna2
+FROM tabela
+WHERE cast(colunaParaMudar AS FLOAT) > 100;
 
 -----------------Montando Sqoop---------------
 listar database
