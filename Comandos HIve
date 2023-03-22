@@ -234,7 +234,7 @@ sudo gedit /etc/hive/conf.dist/hive-site.xml -- acessa
 reiniciar hive
 sudo service hive-server2 stop
 sudo service hive-server2 start
-
+--
 
 
 
