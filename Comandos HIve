@@ -51,8 +51,6 @@ nome1 string,
 nome2 int);
 
 
-
-
 inserir dados: LOAD DATA INPATH '/user/caminho/caminho/nomeArquivo.csv' INTO TABLE CLIENTES;
 inserir um campo: insert into nomeTabela values( 11, 'valor1','valor2', ...);
 ver dados: select * from nomeTabela;
@@ -60,6 +58,16 @@ ver tabelas: show tables;
 descrição tabelas: describe nomeTabela;
 informações da estrutura da tabela: describe formatted nomeTablea;
 informações banco de dados: DESCRIBE DATABASE nomeDataBase;
+
+------------INDEX----------------------
+criar:
+CREATE INDEX table01_index ON TABLE table_01 (column2) as 'COMPACT'
+
+ver: 
+SHOW INDEX ON table01
+
+apagar:
+DROP INDEX table01_index ON table_01
 
 --------------------OUTRA MANEIRA DE ACESSAR DADOS HIVE-----------------------
 consultando Hcatalog no linux
