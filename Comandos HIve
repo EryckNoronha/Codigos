@@ -183,6 +183,9 @@ create viw if not exists nomeTbelaViw as
 select + joins e etc;
 
 ----------------------ORC------------------------
+verse a vetorização esta desabilitada:
+set hihve.vextorized.execution
+
 criando tabela
 CREATE EXTERNAL TABLE
 TABLEAorc (nome1 string, nome2 date, nome3 string, nome4 double)
