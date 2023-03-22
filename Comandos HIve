@@ -1,3 +1,18 @@
+
+Os tipos de dados do Hive incluem
+1. Primitive Types:
+    a. Booleans (BOOLEAN)
+    b. Integers (TINYINT, SMALLINT, INT, BIGINT, FLOAT, DOUBLE)
+    c. Strings (STRING, VARCHAR, CHAR)
+    d. Dates (DATE, TIMESTAMP)
+
+2. Complex Types:
+    a. Arrays (ARRAY<DATA_TYPE>) 
+    b. Maps (MAP<KEY_DATA_TYPE, VALUE_DATA_TYPE>)
+    c. Structs (STRUCT<Data_type, Data_type2, ...>) 
+    d. Union (UNIONTYPE<DATA_TYPE1, DATA_TYPE2, ...>)
+
+
 Para iniciar:beeline
 conectar: !connect jdbc:hive2://
 
