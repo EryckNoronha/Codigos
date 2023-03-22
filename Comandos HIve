@@ -204,6 +204,37 @@ orc.crate.index --- padrão: true --- opção --- true, false
 ver se a vetorização está desabilitada
 set hive.vectorized.execution.enable; se = false está desabilitado coloco = true para habilitar
 
+---------Habilitar CBO----------------
+Dados estatisticos do banco
+set hive.cbo.enable=true;
+set hive.compute.query.using.stats=true;
+set hive.stats.fetch.column.stats=tru;
+set hive.stats.fetch.partition.stats=true;
+obs. para voltar coloca tudo false.
+
+se as tabelas já foram criadas é preciso calcular suas estatisticas
+ANALYZE TABLE LOCACAO_ORC COMPUTE STATISTICS;
+ANALYZE TABLE LOCACAO_ORC COMPUTE STATISTICS FOR COLUMNS; está com bug tem que ver
+
+--------------Spark--------------------
+
+iniciando a configuração nivel local
+set hive.execution.engina; -- para ver como está
+set hive.execution.engina=spark; -- para colocar como spark
+set hive.execution.engina=mr; -- para voltar para mapreduce
+
+a nivel de servidor tem que alterar
+sudo gedit /etc/hive/conf.dist/hive-site.xml -- acessa
+
+<property>
+    <name>hive.execution.engina</name>
+    <value>spark</value>
+</property>
+
+reiniciar hive
+sudo service hive-server2 stop
+sudo service hive-server2 start
+
 
 
 
