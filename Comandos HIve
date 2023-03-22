@@ -201,7 +201,8 @@ orc.compress --- padrão: ZLIB --- opção: NONE,ZLIB,SNAPPY
 orc.crate.index --- padrão: true --- opção --- true, false
 
 
-
+ver se a vetorização está desabilitada
+set hive.vectorized.execution.enable; se = false está desabilitado coloco = true para habilitar
 
 
 
