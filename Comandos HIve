@@ -236,7 +236,7 @@ from locacao loc
 join despachante des on (loc.id = des.id)
 join clientes cli on (loc.id = cli.id)
 join veiculos veic on (loc.id = veic.id);
-_-------------------------------------------------------------
+_-------------------TEMPORARIA e VIW------------------------------------------
 
 criando tabela temporaria
 crate temporary table nomeTabelaTemporaria as select * tabela;
@@ -245,6 +245,8 @@ criando viw (atalho para consulta tabela)
 create viw if not exists nomeTbelaViw as
 select + joins e etc;
 
+apagar viw:
+DROP VIW IF EXISTS nomeViw;
 ----------------------ORC------------------------
 verse a vetorização esta desabilitada:
 set hihve.vextorized.execution
