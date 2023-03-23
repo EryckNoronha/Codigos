@@ -437,7 +437,10 @@ Aula 9: Resumo condicionais no Shell
 
         -ne (!= Diferente)
 
-
-       
+exemplo:
+    if [ -n "$NOME" ]
+    then
+        echo " Variavel não é nula: $NOME "
+    fi
        
        
