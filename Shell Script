@@ -569,9 +569,7 @@ De 0 a 2 anos - Bebê
 De 2 a 14 anos - Criança 
 De 14 a 18 anos - Adolescente 
 De 18 a 65 anos - Adulto Acima de 65 anos - Idoso
-      
-      
-      
+         
       #!/bin/bash
       #
       # Informar a faixa etária do usuário.
@@ -600,5 +598,95 @@ De 18 a 65 anos - Adulto Acima de 65 anos - Idoso
         exit 1
       fi
 
-  
+Aula 14
+      Exercício
+      Escreva um programa em shell script que pede e recebe a nota do usuário a partir da linha de comandos, e calcula o conceito. Utilize blocos IF, porém construa a lógica dos testes de modo a fazer o mínimo de testes possível.
+
+      Os conceitos são:
+
+      De 0 a 5 potos - Insuficiente 
+      De 5 a 7 pontos - Regular 
+      De 7 a 9 pontos - Bom Acima de 9 pontos - Excelente
+
+      #!/bin/bash
+      # 
+      # Objetivo: Exercício bloco if. Programa em shell script calcula conceito do usuário 
+      # a partir da nota.
+
+      read -p "Qual a sua nota? " NOTA
+
+      # NOTA=4
+      if [ "$NOTA" -gt "9" ]
+      then
+        echo "Conceito Excelente"
+      elif [ "$NOTA" -gt "7" ]
+      then
+        echo "Conceito Bom"
+      elif [ "$NOTA" -gt "5" ]
+      then
+        echo "Conceito Regular"
+      elif [ "$NOTA" -gt "0" ]
+      then
+        echo "Conceito Insuficiente"
+      else
+        echo "Usuário não forneceu uma nota válida!"
+        exit 1
+      fi
+
+      ou
+
+      #!/bin/bash
+      # 
+      # Objetivo: Exercício bloco if. Programa em shell script calcula conceito do usuário 
+      # a partir da nota.
+      #
+      # Modificação: Adaptado para aritmética de ponto flutuante (precisão de uma casa decimal).
+
+      read -p "Qual a sua nota? " NOTA
+
+      NOTA=$(echo "$NOTA*10" | bc -l | cut -d"." -f1)
+
+      # NOTA=40
+      if [ "$NOTA" -gt "90" ]
+      then
+        echo "Conceito Excelente"
+      elif [ "$NOTA" -gt "70" ]
+      then
+        echo "Conceito Bom"
+      elif [ "$NOTA" -gt "50" ]
+      then
+        echo "Conceito Regular"
+      elif [ "$NOTA" -gt "0" ]
+      then
+        echo "Conceito Insuficiente"
+      else
+        echo "Usuário não forneceu uma nota válida!"
+        exit 1
+      fi
+
+Aula 15: Verificar arquivos e diretorios com if
+        
+        #!/bin/bash
+        #
+        # Exemplo de verificação de arquivo e diretório com o bloco if
+
+        # Verificar se arquivo existe
+        if [ -f "num.txt" ]
+        then
+          echo "Arquivo num.txt existe!"
+          rm "num.txt"
+        else
+          echo "Arquivo num.txt NÃO existe!"
+        fi
+
+        # Verificar se diretório existe
+        if [ -d "diretorio" ]
+        then
+          echo "Removendo diretório"
+          rm -r "diretorio"
+        else
+          echo "Diretório não encontrado!"
+          exit 1
+        fi
+
 
