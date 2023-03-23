@@ -688,5 +688,23 @@ Aula 15: Verificar arquivos e diretorios com if
           echo "Diretório não encontrado!"
           exit 1
         fi
+Aula 16: if com 'e' logico
+      #!/bin/bash
+      #
+      # Exemplo de condicionais com "e" lógico.
+      #
+      # O usuário informa a idade e quanto de dinheiro possui. O programa
+      # verifica se ele poderá ir ao cinema para assistir um filme cujo ingresso
+      # custa 50R$ e com censura para maiores de 18 anos
 
+      read -p "Quantos anos vc tem? " IDADE
+      read -p "Quanto de grana possui (R\$)? " DINHEIRO
 
+      if [ "$DINHEIRO" -ge "50" -a "$IDADE" -ge "18" ] -----> -a é igual a 'e' lógico
+      then
+        echo "Poderá ir ao cinema!"
+        exit 0
+      fi
+
+      echo "Não poderá ir ao cinema!"
+      exit 1
