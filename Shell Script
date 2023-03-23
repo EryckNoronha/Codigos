@@ -402,4 +402,42 @@ Aula 7: exibir erro caso não complete
         echo "Olá $NOME"
         echo "Sua idade é $IDADE"
      
+Aula 8: Condicional if
 
+       read -p "Deseja exibir uma mensagem? (y/n)" RESPOSTA
+       MENSAGEM="Olá usuario, tudo bem?"
+
+ 
+       if [ "$RESPOSTA" = "y" ]
+       then
+             echo "MENSAGEM"
+       fi
+       obs. fi é para terminar o comando if.
+       
+Aula 9: Resumo condicionais no Shell
+        Comparação de strings:
+        = (Verificar igualdade)
+
+        != (Verificar se é diferente)
+
+        -n (Verifificar se é não nula)
+
+        -z (Verificar se é nula)
+
+        Comparação numérica:
+        -lt ( < Menor)
+
+        -gt ( > Maior)
+
+        -le ( <= Menor ou igual)
+
+        -ge ( >= Maior ou igual)
+
+        -eq ( = Igual)
+
+        -ne (!= Diferente)
+
+
+       
+       
+       
