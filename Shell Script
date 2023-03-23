@@ -388,3 +388,18 @@ Aula 5: Expanção de variavel
        echo ${variavel:= valor padrão} o sinal de = depois do : insere um valor padrão
        
 
+Aula 7: exibir erro caso não complete
+        
+        read -p "Digite seu nome " NOME
+        echo "Nome cadastrado: ${NOME:?Usuário não forneceu o nome\!" ----> linha para adicionar o erro
+        read -p "Digite a data de nascimento (DD/MM/AAAA) " DATA
+        echo "Data nac: ${DATA:?Usuário não forneceu a data de nascimento\!" ----> linha para adicionar o erro
+
+        ANO_NAC=${DATA##*/} --> O simbulo # apaga tudo que vem antes de / então só vai sobrar o ano
+        ANO_HJ=$(date +%Y)
+        IDADE=$(echo "$ANO_HJ-$ANO_NAC" | bc -l)
+
+        echo "Olá $NOME"
+        echo "Sua idade é $IDADE"
+     
+
