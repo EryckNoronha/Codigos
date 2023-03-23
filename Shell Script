@@ -93,6 +93,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 nautilus . &: abrir a pasta atual e o & significa que não ficará vinculado ao terminal
                             ctrl + h: habilita ou desabilita arquuivos ocultos dentro da janela com os aqruivos fora do terminal
                 gedit .oculto.txt &: vai abrir o arquivo txt com o editor de texto fora do terminal
+                cat: exibe conteudo do arquivo no terminal
                 
     Mod.1 #15 - mv: Mover arquivos, diretórios e renomear
                 mv nomeDoArquivo.txt /diretorio: moverá para o diretorio
@@ -443,4 +444,118 @@ exemplo:
         echo " Variavel não é nula: $NOME "
     fi
        
-       
+Aula 10: Comparação if com numeros
+
+        #!/bin/bash
+        #
+        # Exemplifica as comparações numéricas com blocos if.
+
+        NUM="10"
+
+        # Verificar se NUM é < 11
+        if [ "$NUM" -lt "11" ]
+        then
+          echo "$NUM < 11"
+        fi
+
+        # Verificar se NUM > 9
+        if [ "$NUM" -gt "9" ]
+        then
+          echo "$NUM > 9"
+        fi
+
+        # Verificar se NUM é <= 10
+        if [ "$NUM" -le "10" ]
+        then
+          echo "$NUM <= 10"
+        fi
+
+        # Verificar se NUM é >= 10
+        if [ "$NUM" -ge "10" ]
+        then
+          echo "$NUM >= 10"
+        fi
+
+        # Verificar se NUM = 10
+        if [ "$NUM" -eq "10" ]
+        then
+          echo "$NUM = 10"
+        fi
+
+        # Verificar se NUM != 9
+        if [ "$NUM" -ne "9" ]
+        then
+          echo "$NUM != 9"
+        fi 
+
+aula 11 if, elif else
+
+      #!/bin/bash
+      #
+      # Informa se o usuário poderá assistir a um filme com
+      # censura para maiores e com o ingresso que custa 50R$
+      # Exemplo de bloco if, elif, else do Shell.
+
+      read -p "Qual a sua idade? " IDADE
+      read -p "Quanto tem de dinheiro? " DINHEIRO
+
+      if [ "$IDADE" -lt "18" ]
+      then
+        echo "O usuário não poderá assistir o filme"
+        echo "A censura é para maiores de 18 anos e o usuário tem $IDADE anos"
+      elif [ "$DINHEIRO" -lt "50" ]
+      then
+        echo "O usuário não poderá assistir o filme"
+        echo "O ingresso custa 50R$ e o usuário só tem $DINHEIRO R\$"
+      else
+        echo "O usuário Poderá assistir ao filme!"
+      fi
+
+
+Aula 12:
+      #!/bin/bash
+      #
+      # Exemplo de um sistema de cadastro com bloco if, elif, else.
+
+      MENU="
+      Menu:
+      1 - Ajuda
+      2 - Ver cadastro
+      3 - Editar
+      "
+
+      echo "$MENU"
+      read -p "Digite a opção: " OPCAO
+
+      CADASTRO=$(cat "cadastro.txt") ----> esse é o arquivo com o cadastro, foi criado separado por ':' ex.Dirack:5555555:emailqualquer@hotmail.com
+
+      NOME=$(echo "$CADASTRO" | cut -d":" -f1)
+      TELEFONE=$(echo "$CADASTRO" | cut -d":" -f2)
+      EMAIL=$(echo "$CADASTRO" | cut -d":" -f3)
+      USUARIO="
+      NOME=$NOME
+      TELEFONE=$TELEFONE
+      EMAIL=$EMAIL
+      "
+
+      if [ "$OPCAO" -eq "1" ]
+      then
+        echo "Programa de cadatro de usuário"
+
+      elif [ "$OPCAO" -eq "2" ]
+      then
+        echo "$USUARIO"
+
+      elif [ "$OPCAO" -eq "3" ]
+      then
+        echo "Edição de cadastro"
+        read -p "Novo nome: " NOME2
+        read -p "Novo telefone: " TELEFONE2
+        read -p "Novo email: " EMAIL2
+        echo "$NOME2:$TELEFONE2:$EMAIL2" > 'cadastro.txt'
+
+      else
+        echo "Opção inválida!"
+        exit 1
+      fi
+
