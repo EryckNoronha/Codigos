@@ -319,6 +319,8 @@ Alguns formatos usados pelo comando:
                
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+https://github.com/Geofisicando/Curso-Shell-Script-Profissional-mod-2
+
 INTERMEDIARIO
 
 Aula 1: Executar comando em um documento Script
@@ -871,6 +873,56 @@ Aula 24: for de repetição
 
           echo "Usuários cadastrados:"
           cat cadastro.txt
+
+Aula 25: Comando de repetição WHILE
+
+          #!/bin/bash
+          #
+          # Exemplo de uso do laço while em Shell Script
+          # Mini sistema de cadastro modificado
+
+          ARQUIVO_CADASTRO="cadastro.txt"
+
+          i="1"
+
+          # i <= 2
+          while [ "$i" -le "2" ]
+          do
+            echo "Cadastrar usuário $i"
+            read -p "nome: " NOME
+            read -p "email: " EMAIL
+
+            # Armazena no arquivo de cadastro
+            echo "Usuario: $NOME" >> "$ARQUIVO_CADASTRO"
+            echo "Email: $EMAIL" >> "$ARQUIVO_CADASTRO"
+
+            i=$((i+1)) ---> incremento de i
+          done
+
+          echo
+          echo "Usuários cadastrados:"
+          cat cadastro.txt
+
+Aula 26: Ler linha a linha usando WHILE
+          #!/bin/bash
+          #
+          # Exemplo de como ler um arquivo linha por linha em Shell Script.
+
+          ARQUIVO="cadastro.txt"
+
+          i="1"
+
+          while read linha
+          do
+            echo "Usuário $i"
+            echo "NOME: $(echo $linha | cut -d":" -f1)"
+            echo "EMAIL: $(echo $linha | cut -d":" -f2)"
+
+            i=$((i+1))
+
+          done < "$ARQUIVO"  ----> direcionando para dentro do WHILE para poder ler
+
+
 
 
 
