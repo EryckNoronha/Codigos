@@ -29,7 +29,20 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
      man -f comando: pequena descrição
      man -w comando: onde fica a documentação
      
-
+     top: no bash visualiza processos que estão rodando
+     kill -15 IDPROCESSO: interrompe processo em backgroud
+     jobs: mostra o que está rodando em segundo plano
+     jobs -l: mais informações
+     fg %+(numero do processo): vai trazer a execução para (primeiro plano)
+     bg %+(numero do processo): vai levar o processo para segundo plano
+     
+     CARActeres especiais
+     $# : Armazena o numero de caracteres atribuidos ao script
+     $* : No for recebe cacateres passados em uma unica string
+     $$ : Armazena o id do processo
+     $? : Armazena erros de execução
+      
+      
 ## Fase 1
 
     Mod.1 #1 - Descobrindo o terminal
@@ -88,6 +101,9 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                      ponto-ponto: Diretório acima anterior
 
 ## Fase 5
+   
+    obs. o & apos executar arquivo executa em backgroud   
+
 
     Mod.1 #14 - touch: Criar arquivos em branco vasio e arquivos ocultos
                 touch .oculto.txt: o pnto na frente do arquivo cria arquivo oculto
@@ -1055,7 +1071,7 @@ Aula 34 Loop infinito e comando sleep
               do
                 echo -en "Contando..."
                 sleep 1
-                echo -en "$i\r\r"
+                echo -en "$i\r\r" ---> para contagem ficar na mesma linha
               done
             }
 
