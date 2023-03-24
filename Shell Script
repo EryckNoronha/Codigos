@@ -42,6 +42,9 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
      $$ : Armazena o id do processo
      $? : Armazena erros de execução
       
+     history: lista de comandos executados
+     !numero do comando: executa comando anterior
+     !! : executa o ultimo comando
       
 ## Fase 1
 
