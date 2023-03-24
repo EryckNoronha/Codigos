@@ -825,7 +825,7 @@ Aula 23: Fazer flags
           VERSAO="Versão 1.0"
 
           case "$1" in 
-            -h | --help)
+            -h | --help) ---> ou coloca -h ou coloca --help vai fazer a mesma coisa
               echo "$AJUDA"
             ;;
 
