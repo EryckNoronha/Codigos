@@ -36,6 +36,8 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
      fg %+(numero do processo): vai trazer a execução para (primeiro plano)
      bg %+(numero do processo): vai levar o processo para segundo plano
      
+     nohup ./arquivo.sh : matei em execução mesmo com o terminal fechado
+     
      CARActeres especiais
      $# : Armazena o numero de caracteres atribuidos ao script
      $* : No for recebe cacateres passados em uma unica string
