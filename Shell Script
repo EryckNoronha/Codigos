@@ -52,6 +52,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                
     Mod.1 #7 - echo: Exibir mensagens na tela do terminal, exibe variaveis.obs echo $eOnomeDaVariavel
                echo -e: interpreta caracteres especiais
+               echo -n: exibe na mesma linha
                echo "prenchimento qualque" >> aquivo.txt : Vaicriar e adicionar o que está entre as aspas duplas no arqivo.txt
                echo "prenchimento qualque" > aquivo.txt: caso exita vai apagar e substituir
                    obs. cat + nomeArquivo.txt exibe o que tem no arquivo
@@ -93,6 +94,7 @@ Este curso utiliza o shell Bash, acrônimo para "Bourne-Again SHell", que já ve
                 nautilus . &: abrir a pasta atual e o & significa que não ficará vinculado ao terminal
                             ctrl + h: habilita ou desabilita arquuivos ocultos dentro da janela com os aqruivos fora do terminal
                 gedit .oculto.txt &: vai abrir o arquivo txt com o editor de texto fora do terminal
+                vi .oculto.txt: editor de texto pelo terminal
                 cat: exibe conteudo do arquivo no terminal
                 
     Mod.1 #15 - mv: Mover arquivos, diretórios e renomear
@@ -729,6 +731,12 @@ Aula 17: if 'ou' lógico
         echo "Seu grupo de pesquisa é $GROUP"
         exit 0
       fi
+      
+      
+      
+      
+      
+      
 
       echo "Acesso NÃO autorizado!"
       echo "Usuário: $USER"
@@ -990,6 +998,95 @@ O arquivo de script exemplo
 
 Obs. Para carregar o arquivo de biblioteca chamo com o comando source + arquivo.sh
 da maneira assima só será carragado no terminar que foi feito o comando
+
+-------------------------------------------------------------------------------------------------------------------
+
+Aula 33: Busca em uma lista
+ arquivo biblioteca.sh
+ 
+     #!/bin/bash
+    #
+    # Função de busca de produto em uma lista de compras
+
+    buscaproduto(){
+
+      PRODUTO="$1"
+
+      ARQUIVO="$2"
+
+      cat "$ARQUIVO" | cut -d":" -f1 | grep -q "$PRODUTO" ---> O comando grep faz busca pela variavel e -q é para fazer uma bubsca cilenciosa
+
+      [ "$?" -ne "0" ] && {  --->> "$?" retorna o numero de erros
+        echo "Produto $PRODUTO não encontrado em $ARQUIVO"
+        return 1
+      }
+
+      sed -n "/$PRODUTO/p" "$ARQUIVO" | sed "s/:/ /;s/$/R\$/" --> O comando sed faz alterações no arquivo
+    }
+
+arquivo de busca
+      #!/bin/bash
+      #
+      # Exercício sobre funções em Shell Script
+
+      # Carrega a biblioteca de funções
+      source biblioteca.sh
+
+      ARQUIVO="lista_compras.txt" ----> arquivo que estão os registros
+
+      buscaproduto "carne" "$ARQUIVO"
+
+      buscaproduto "peixe" "$ARQUIVO"
+
+      buscaproduto "creme dental" "$ARQUIVO"
+--------------------------------------------------------------------------------------------------------------------------
+
+Aula 34 Loop infinito e comando sleep
+
+            #!/bin/bash
+            #
+            # Script para executar loop infinito
+
+            TEMPO="5"
+
+            contador(){
+
+              for i in $(seq "$1")
+              do
+                echo -en "Contando..."
+                sleep 1
+                echo -en "$i\r\r"
+              done
+            }
+
+            echo "Iniciando o laço..."
+
+            while : obs. os ':' torna sempre verdade
+            do
+
+              contador "$TEMPO"
+              echo "Passaram $TEMPO segundos!"
+
+              read -p "Desligar contador?(y/n) " RESPOSTA
+              if [ "$RESPOSTA" == "y" ]
+              then
+                echo "Finalizando..."
+                break       -------->>> if com break faz com que o laço infinito seja enterrompido
+              fi
+
+            done
+            
+            
+
+
+
+
+
+
+
+
+
+
 
 
 
