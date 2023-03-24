@@ -921,7 +921,23 @@ Aula 26: Ler linha a linha usando WHILE
             i=$((i+1))
 
           done < "$ARQUIVO"  ----> direcionando para dentro do WHILE para poder ler
+          
+Aula 31: Definir função
 
+          #!/bin/bash
+          #
+          # Exemplo de uso de funções em Shell Script
+
+          SOMAR(){
+
+            RESULTADO=$(echo "$1+$2" | bc -l)  --> $1 posição 1 e $2 posição 2
+            echo "A soma de $1+$2=$RESULTADO"
+          }
+          
+          #exemplo chamando função
+          SOMAR 1 2
+
+          echo "$1 e $2 passados ao script"
 
 
 
