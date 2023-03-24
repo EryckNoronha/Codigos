@@ -785,4 +785,25 @@ Aula 21: Criando menu com comando 'case'
         ;;
       esac
 
+Aula 22: Passando parametro pela linha de comando
+          #!/bin/bash
+          #
+          # Exemplo de como passar parâmetros ao programa pela
+          # linha de comandos (Parâmetros posicionais)
+          #
+          # ./programa.sh p1 p2 p3 p4
+          #       ^       ^  ^  ^  ^
+          #       $0      $1 $2 $3 $4
+
+          echo "O nome do programa no terminal é: $0"
+          echo "O nome do programa é: $(basename $0)" ---> o comando basename corta todo diretório e mostra apenas o nome do arquivo
+
+          echo "O primeiro parâmetro passado foi: $1"
+          echo "O segundo parâmetro passado foi: $2"
+          echo "O terceiro parâmetro passado foi: $3"
+          echo "O quarto parâmetro passado foi: $4"
+
+          exit 0
+          
+          Obs. Quando for executado no terminal, o que eu colocar na primeira posição apos o .sh vai ser inserido no lugar $1 e assim por diante
 
