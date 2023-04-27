@@ -59,6 +59,8 @@ filterB = df.dest == "PDX"
 # Filtrando os dados, primeiro pelo filterA entao pelo filterB
 selected2 = selected2.filter(filterA).filter(filterB)
 
+
+
 #selecionar item na coluna
 df1.select("name").filter(F.col('id')==6077).collect()
 
@@ -178,10 +180,10 @@ df.take(numero de linhas)
 col = len(df.columns)
 lin = df.count()
 print(f'quantidade de colunas {col}, quantidade linhas {lin}')
-
+-------------------------------------------------------
 CONSULTANDO DADOS
-#
-from pyspark.sql.functions import max
+----------------------------------------------------
+#from pyspark.sql.functions import max
 df.select(max("nome coluna")).take(1) -> retorna o maior valor da coluna
 
 
@@ -223,6 +225,8 @@ df2 = df.withColumn("duration_hrs", df.nome_coluna/60)
 #renomeou
 df.select((df.nome_coluna/60).alias("novo_nome")).show()
 
+#Mudando o tipo da coluna
+df2 = df.withColumn('novonomecoluna, tabela[nomecoluna].cast['int']).drop('nome coluna excluir')
 
 # Selecionando um subconjunto do dataset
 selected1 = flights.select("tailnum", "origin", "dest")
