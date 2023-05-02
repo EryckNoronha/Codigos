@@ -1,3 +1,6 @@
+#descrição da tabela
+DESC FORMATTED >nome tabela<
+
 
 Os tipos de dados do Hive incluem
 1. Primitive Types:
